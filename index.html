@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COGNIVM - Industrial Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-logo"></div>
+
+    <header>
+        <nav>
+            <div class="brand-name">COGNI<span>VM</span></div>
+            <ul>
+                <li><a href="javascript:void(0)" onclick="openModal()">Sobre a Empresa</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#integracoes">Integrações</a></li>
+                <li><a href="mailto:sac@cognivm.com.br" class="btn">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Cognição Industrial de Alta Performance</h1>
+                <p>Módulos integrados para Resíduos, Químicos e Gestão Ambiental.</p>
+                <a href="#expertise" class="scrolldown">Explore nossas soluções</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <video id="aboutVideo" autoplay muted loop playsinline>
+                <source src="/Users/tchelobarbosa/Downloads/logo.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
+    </div>
+
+    <section id="expertise">
+        <h2>Expertise Ambiental & Industrial</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Gestão de Resíduos (SIGOR/CETESB)</h3>
+                <p>Emissão automatizada de MTR, DMR e CDF com rastreabilidade total e conformidade regulatória.</p>
+            </div>
+            <div class="card">
+                <h3>Inteligência de Documentos</h3>
+                <p>Análise de CADRI e Licenças de Operação com tomada de decisão baseada em dados.</p>
+            </div>
+            <div class="card">
+                <h3>Gestão Química</h3>
+                <p>Controle completo de produtos químicos com elaboração de FISPQ e gestão de inventário.</p>
+            </div>
+            <div class="card">
+                <h3>Compliance Ambiental</h3>
+                <p>Automação de relatórios e inúmeração junto aos órgãos ambientais.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Dúvidas ou Suporte: <strong>sac@cognivm.com.br</strong></p>
+        <p>&copy; 2026 COGNIVM - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById("videoModal").style.display = "block";
+            const video = document.getElementById("aboutVideo");
+            video.currentTime = 0;
+            video.play();
+        }
+
+        function closeModal() {
+            document.getElementById("videoModal").style.display = "none";
+            const video = document.getElementById("aboutVideo");
+            video.pause();
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("videoModal")) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
