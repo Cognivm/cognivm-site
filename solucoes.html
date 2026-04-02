@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COGNIVM - Burn Control</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Solucoes Page ── */
+        .page-hero {
+            padding: 140px 5% 80px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-hero .tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .badge--gold { background: var(--accent); color: var(--primary); }
+        .badge--glass { background: var(--glass); color: var(--accent-light); border: 1px solid var(--glass-border); }
+
+        /* ── Value Props ── */
+        .value-section {
+            position: relative;
+            z-index: 1;
+            padding: 60px 5% 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .value-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            color: var(--text);
+        }
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .value-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 36px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            cursor: default;
+        }
+        .value-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+        }
+        .value-card .icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .value-card h3 {
+            font-size: 1.15rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ── Modules Accordion ── */
+        .modules-section {
+            position: relative;
+            z-index: 1;
+            padding: 80px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .modules-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            color: var(--text);
+        }
+        .accordion-item {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        .accordion-item.active {
+            border-color: var(--accent);
+        }
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 28px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .accordion-header:hover {
+            background: rgba(255,255,255,0.02);
+        }
+        .accordion-header h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .accordion-header .arrow {
+            color: var(--accent);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .accordion-item.active .arrow {
+            transform: rotate(180deg);
+        }
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 28px;
+        }
+        .accordion-item.active .accordion-body {
+            max-height: 600px;
+            padding: 0 28px 24px;
+        }
+        .accordion-body p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .accordion-body ul {
+            list-style: none;
+            padding: 0;
+        }
+        .accordion-body ul li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .accordion-body ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* ── Flow Diagram ── */
+        .flow-section {
+            position: relative;
+            z-index: 1;
+            padding: 80px 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .flow-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            color: var(--text);
+        }
+        .flow-steps {
+            position: relative;
+            padding-left: 40px;
+        }
+        .flow-steps::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent), var(--glass-border));
+        }
+        .flow-step {
+            position: relative;
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .flow-step:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+        .flow-step::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 28px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--primary);
+        }
+        .flow-step .step-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .flow-step h4 {
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .flow-step p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        /* ── Dashboard Preview ── */
+        .dashboard-section {
+            position: relative;
+            z-index: 1;
+            padding: 80px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .dashboard-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        .dashboard-section .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+        }
+        .dash-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .dash-kpi {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        .dash-kpi:hover { border-color: var(--accent); }
+        .dash-kpi .kpi-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 4px;
+        }
+        .dash-kpi .kpi-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .dash-kpi .kpi-unit {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .gauge-bar {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .gauge-bar .gauge-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .gauge-bar .gauge-header span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .gauge-bar .gauge-header strong {
+            color: var(--accent);
+        }
+        .gauge-track {
+            height: 10px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        .gauge-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 1.5s ease;
+            background: linear-gradient(90deg, #22c55e, #eab308, #ef4444);
+        }
+        .gauge-marker {
+            position: absolute;
+            top: -4px;
+            width: 2px;
+            height: 18px;
+            background: var(--text);
+            border-radius: 1px;
+        }
+        .emissions-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .emissions-table th {
+            text-align: left;
+            padding: 14px 18px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--glass-border);
+            background: rgba(255,255,255,0.02);
+        }
+        .emissions-table td {
+            padding: 12px 18px;
+            font-size: 0.88rem;
+            color: var(--text);
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .emissions-table tr:last-child td { border-bottom: none; }
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-dot.ok { background: #22c55e; box-shadow: 0 0 6px rgba(34,197,94,0.5); }
+        .status-dot.warn { background: #eab308; box-shadow: 0 0 6px rgba(234,179,8,0.5); }
+        .status-dot.critical { background: #f97316; box-shadow: 0 0 6px rgba(249,115,22,0.5); }
+        .status-dot.stop { background: #ef4444; box-shadow: 0 0 6px rgba(239,68,68,0.5); }
+
+        /* ── Audience ── */
+        .audience-section {
+            position: relative;
+            z-index: 1;
+            padding: 80px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .audience-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            color: var(--text);
+        }
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .audience-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .audience-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .audience-card .role-icon { font-size: 2rem; margin-bottom: 12px; }
+        .audience-card h4 { font-size: 1rem; color: var(--accent); margin-bottom: 8px; }
+        .audience-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+
+        /* ── CTA ── */
+        .cta-section {
+            position: relative;
+            z-index: 1;
+            padding: 80px 5%;
+            text-align: center;
+        }
+        .cta-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--glass);
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            padding: 60px 40px;
+        }
+        .cta-box h2 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .cta-box p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+        .cta-box .btn-cta {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .cta-box .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(197,160,89,0.4);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+            position: relative;
+            z-index: 1;
+            padding: 100px 5% 0;
+        }
+        .back-link:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .page-hero h1 { font-size: 2rem; }
+            .dash-grid { grid-template-columns: repeat(2, 1fr); }
+            .flow-steps { padding-left: 30px; }
+            .value-grid { grid-template-columns: 1fr; }
+            .emissions-table { font-size: 0.8rem; }
+            .emissions-table th, .emissions-table td { padding: 10px 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-logo"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" style="text-decoration:none;">
+                <div class="brand-name">COGNI<span>VM</span></div>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#modulos">Módulos</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="mailto:sac@cognivm.com.br" class="btn">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <a href="index.html" class="back-link">&larr; Voltar ao início</a>
+
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="badge-row">
+            <span class="badge badge--gold">Odoo 16</span>
+            <span class="badge badge--glass">CETESB Compliance</span>
+            <span class="badge badge--glass">Real-time CLP</span>
+        </div>
+        <h1>Burn Control</h1>
+        <p class="tagline">Gestão completa do processo de incineração de resíduos industriais &mdash; do recebimento ao relatório diário, com monitoramento CLP em tempo real.</p>
+    </section>
+
+    <!-- PROPOSTA DE VALOR -->
+    <section class="value-section">
+        <h2>Por que Burn Control?</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="icon">&#9888;</div>
+                <h3>Conformidade Automatizada</h3>
+                <p>Verificação contínua dos limites da Licença de Operação com parada automática em caso de violação. Sem margem para erro humano.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">&#128269;</div>
+                <h3>Rastreabilidade Total</h3>
+                <p>Do MTR e CADRI ao relatório diário, passando pela composição química &mdash; tudo integrado e auditável em um único sistema.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">&#128200;</div>
+                <h3>Projeção Inteligente</h3>
+                <p>Antes de queimar, o sistema projeta emissões com base na composição do resíduo e alerta sobre conflitos com os limites.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">&#9881;</div>
+                <h3>Autocorreção de Fatores</h3>
+                <p>Quando a emissão medida diverge da projeção, o sistema corrige automaticamente os fatores de concentração, aprendendo com dados reais.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">&#128225;</div>
+                <h3>Dashboard em Tempo Real</h3>
+                <p>Painel operacional com atualização a cada 30 segundos, notificações push via WebSocket e botão de parada de emergência.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">&#128274;</div>
+                <h3>Controle de Acesso Granular</h3>
+                <p>5 perfis hierárquicos &mdash; Operador, Supervisor, Administrador, Gestor e API CLP &mdash; cada um com permissões específicas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULOS FUNCIONAIS -->
+    <section class="modules-section" id="modulos">
+        <h2>Módulos Funcionais</h2>
+
+        <div class="accordion-item active">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>&#128196; Licença de Operação (LO)</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="accordion-body">
+                <p>Digitalização completa da Licença de Operação CETESB. Apenas uma licença ativa por vez, com verificação automática de validade.</p>
+                <ul>
+                    <li>Limites de massa na alimentação, emissão e massa de emissão</li>
+                    <li>Limiares configuráveis de alerta (80%) e crítico (95%)</li>
+                    <li>Condições operacionais bloqueantes (temperatura, rotação, pressão)</li>
+                    <li>Parada automática ao exceder limites</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>&#9851; Gestão de Resíduos</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="accordion-body">
+                <p>Ciclo de vida completo: Disponível &rarr; Na Fila &rarr; Em Queima &rarr; Concluído. Queima parcial em múltiplos turnos com rastreio de quantidade.</p>
+                <ul>
+                    <li>Vinculação com CADRI, MTR, gerador e tipo de embalagem</li>
+                    <li>Composição química importada da análise laboratorial</li>
+                    <li>Fator de correção automático com histórico auditável</li>
+                    <li>Controle de quantidade em tempo real (recebida - queimada)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>&#128344; Turnos de Operação</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="accordion-body">
+                <p>Unidade organizacional da operação. Apenas um turno ativo por vez, com geração automática de relatório ao encerrar.</p>
+                <ul>
+                    <li>Letras A, B, C com supervisor e equipe designados</li>
+                    <li>Fluxo: Rascunho &rarr; Em andamento &rarr; Concluído &rarr; Validado</li>
+                    <li>Relatório diário gerado automaticamente ao encerrar</li>
+                    <li>Validação gera movimentações de estoque</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>&#128293; Fila de Queima</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="accordion-body">
+                <p>Coração operacional do módulo. Projeção de emissões, detecção de conflitos e sugestão de balanceamento antes de iniciar a queima.</p>
+                <ul>
+                    <li>Sequência de queima com drag-and-drop</li>
+                    <li>Projeção automática: taxa projetada, limite, % de uso, status</li>
+                    <li>Detecção de conflitos acumulados entre itens simultâneos</li>
+                    <li>Botão "Sugerir Balanceamento" para reordenação inteligente</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>&#128225; Monitoramento CLP</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="accordion-body">
+                <p>Integração em tempo real com o Controlador Lógico Programável do incinerador via API REST.</p>
+                <ul>
+                    <li>Leituras periódicas: temperatura, rotação, pressão, emissões</li>
+                    <li>Componentes: HCl, SOx, NOx, MP, CO, HF</li>
+                    <li>Avaliação automática contra 7 categorias de violação</li>
+                    <li>Acumulação horária, diária e mensal de emissões</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>&#128680; Sistema de Alertas</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="accordion-body">
+                <p>Mecanismo de segurança central com 4 níveis e 7 gatilhos automáticos.</p>
+                <ul>
+                    <li>STOP: pausa automática + e-mail + notificação push</li>
+                    <li>Crítico: notificação por e-mail + registro no chatter</li>
+                    <li>Atenção e Informativo: registro e acompanhamento</li>
+                    <li>Retomada exige justificativa do supervisor (min. 20 caracteres)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>&#128202; Relatório Diário</h3>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="accordion-body">
+                <p>Documento oficial gerado automaticamente ao encerrar o turno, com validação que gera baixa de estoque.</p>
+                <ul>
+                    <li>Totais por tipo: sólido, líquido, pastoso</li>
+                    <li>Linhas detalhadas: MTR, CADRI, tipo, quantidade queimada</li>
+                    <li>Resumo de alertas (STOP, Crítico, Atenção)</li>
+                    <li>Validação cria stock.picking e stock.move automaticamente</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD PREVIEW -->
+    <section class="dashboard-section" id="dashboard">
+        <h2>Dashboard Operacional</h2>
+        <p class="subtitle">Visualização em tempo real da operação de queima</p>
+
+        <div class="dash-grid">
+            <div class="dash-kpi">
+                <div class="kpi-value">842 <span class="kpi-unit">kg/h</span></div>
+                <div class="kpi-label">Taxa de Alimentação</div>
+            </div>
+            <div class="dash-kpi">
+                <div class="kpi-value">867 <span class="kpi-unit">&deg;C</span></div>
+                <div class="kpi-label">Forno Primário</div>
+            </div>
+            <div class="dash-kpi">
+                <div class="kpi-value">1.024 <span class="kpi-unit">&deg;C</span></div>
+                <div class="kpi-label">Pós-combustão</div>
+            </div>
+            <div class="dash-kpi">
+                <div class="kpi-value">12.4 <span class="kpi-unit">ton</span></div>
+                <div class="kpi-label">Total Queimado Hoje</div>
+            </div>
+        </div>
+
+        <div class="gauge-bar">
+            <div class="gauge-header">
+                <span>Taxa de Alimentação</span>
+                <span><strong>842</strong> / 1.000 kg/h (84%)</span>
+            </div>
+            <div class="gauge-track">
+                <div class="gauge-fill" id="gaugeFill" style="width: 0%"></div>
+                <div class="gauge-marker" style="left: 75%" title="Taxa planejada: 750 kg/h"></div>
+            </div>
+        </div>
+
+        <table class="emissions-table">
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Medido</th>
+                    <th>Limite LO</th>
+                    <th>Uso</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HCl</td>
+                    <td>42.5 mg/Nm&sup3;</td>
+                    <td>80 mg/Nm&sup3;</td>
+                    <td>53%</td>
+                    <td><span class="status-dot ok"></span>OK</td>
+                </tr>
+                <tr>
+                    <td>SOx</td>
+                    <td>198 mg/Nm&sup3;</td>
+                    <td>280 mg/Nm&sup3;</td>
+                    <td>71%</td>
+                    <td><span class="status-dot ok"></span>OK</td>
+                </tr>
+                <tr>
+                    <td>NOx</td>
+                    <td>312 mg/Nm&sup3;</td>
+                    <td>400 mg/Nm&sup3;</td>
+                    <td>78%</td>
+                    <td><span class="status-dot ok"></span>OK</td>
+                </tr>
+                <tr>
+                    <td>MP</td>
+                    <td>28.1 mg/Nm&sup3;</td>
+                    <td>30 mg/Nm&sup3;</td>
+                    <td>94%</td>
+                    <td><span class="status-dot critical"></span>Crítico</td>
+                </tr>
+                <tr>
+                    <td>CO</td>
+                    <td>45 mg/Nm&sup3;</td>
+                    <td>50 mg/Nm&sup3;</td>
+                    <td>90%</td>
+                    <td><span class="status-dot warn"></span>Atenção</td>
+                </tr>
+                <tr>
+                    <td>HF</td>
+                    <td>1.2 mg/Nm&sup3;</td>
+                    <td>5 mg/Nm&sup3;</td>
+                    <td>24%</td>
+                    <td><span class="status-dot ok"></span>OK</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- FLUXO OPERACIONAL -->
+    <section class="flow-section">
+        <h2>Fluxo Operacional</h2>
+        <div class="flow-steps">
+            <div class="flow-step">
+                <div class="step-label">Preparação</div>
+                <h4>Montar o Turno</h4>
+                <p>Criar turno, designar supervisor e equipe, adicionar resíduos à fila de queima com quantidade e taxa planejadas.</p>
+            </div>
+            <div class="flow-step">
+                <div class="step-label">Validação</div>
+                <h4>Verificar Projeções</h4>
+                <p>O sistema projeta emissões, detecta conflitos e sugere balanceamento para evitar violações de limites.</p>
+            </div>
+            <div class="flow-step">
+                <div class="step-label">Operação</div>
+                <h4>Queima Monitorada</h4>
+                <p>CLP envia leituras em tempo real. Dashboard atualiza a cada 30s. Alertas automáticos em caso de desvio.</p>
+            </div>
+            <div class="flow-step">
+                <div class="step-label">Segurança</div>
+                <h4>Alertas e Parada</h4>
+                <p>Violações geram parada automática. Supervisor reconhece, resolve e justifica a retomada.</p>
+            </div>
+            <div class="flow-step">
+                <div class="step-label">Encerramento</div>
+                <h4>Relatório e Estoque</h4>
+                <p>Turno encerrado gera relatório automático. Validação cria movimentações de estoque com rastreabilidade total.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICO-ALVO -->
+    <section class="audience-section">
+        <h2>Para quem é o Burn Control?</h2>
+        <div class="audience-grid">
+            <div class="audience-card">
+                <div class="role-icon">&#127981;</div>
+                <h4>Centrais de Incineração</h4>
+                <p>Empresas de tratamento de resíduos por incineração industrial que precisam de conformidade CETESB.</p>
+            </div>
+            <div class="audience-card">
+                <div class="role-icon">&#9878;</div>
+                <h4>Indústrias com Incinerador</h4>
+                <p>Químicas, farmacêuticas e petroquímicas com incineradores próprios e obrigações ambientais.</p>
+            </div>
+            <div class="audience-card">
+                <div class="role-icon">&#128209;</div>
+                <h4>Consultorias Ambientais</h4>
+                <p>Prestadores de serviço de gestão ambiental que acompanham incineradores de seus clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-box">
+            <h2>Pronto para transformar sua operação?</h2>
+            <p>Agende uma demonstração e veja o Burn Control em ação com dados reais do seu incinerador.</p>
+            <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Burn%20Control" class="btn-cta">Solicitar Demonstração</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Dúvidas ou Suporte: <strong>sac@cognivm.com.br</strong></p>
+        <p>&copy; 2026 COGNIVM - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const wasActive = item.classList.contains('active');
+            document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+            if (!wasActive) item.classList.add('active');
+        }
+
+        // Animate gauge on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.getElementById('gaugeFill').style.width = '84%';
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(document.querySelector('.gauge-bar'));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
