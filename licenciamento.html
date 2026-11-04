@@ -25,78 +25,124 @@
     <main>
         <section class="hero">
             <div class="wrap">
-                <div>
-                    <h1>As licenças dos seus clientes acompanhadas no portal da CETESB</h1>
-                    <p class="lead">Informe o CNPJ e o sistema traz todas as solicitações da empresa: situação, processo, documento emitido em PDF e o texto já extraído. Quando sai o documento que interessa, a requisição interna abre sozinha.</p>
-                    <div class="actions">
-                        <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
-                        <a href="#regras" class="text-link">Ver como funcionam as regras</a>
-                    </div>
+                <h1>Saiba quando a CETESB decide sobre a licença, <mark>sem consultar o portal</mark></h1>
+                <p class="lead">O sistema acompanha as solicitações de licença de qualquer CNPJ, baixa o documento emitido e abre a requisição interna quando a regra pedir.</p>
+                <div class="actions">
+                    <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
+                    <a href="#regras" class="link-ink">Ver como funcionam as regras</a>
+                </div>
+                <dl class="ficha">
+                    <div><dt>O que é</dt><dd>Acompanhamento automático dos processos de licenciamento de uma empresa no portal da CETESB, com situação, documento emitido em PDF e o texto do documento, dentro do Odoo.</dd></div>
+                    <div><dt>Para quem</dt><dd>Consultorias ambientais e empresas que acompanham licenças de clientes, de fornecedores ou das próprias unidades.</dd></div>
+                    <div><dt>O que muda</dt><dd>Ninguém precisa lembrar de consultar. Quando a decisão sai, o PDF é baixado e, se a regra pedir, a requisição interna já está aberta.</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que muda no acompanhamento</h2>
+                    <p>Do portal consultado à mão ao processo que avisa.</p>
                 </div>
                 <div>
-                    <p class="facts-label">Exemplo de regra</p>
-                    <dl class="facts">
-                        <div><dt>Tipo</dt><dd>Parecer Técnico</dd></div>
-                        <div><dt>Situação</dt><dd>Deferido</dd></div>
-                        <div><dt>Palavra no PDF</dt><dd>perigoso, perigosa</dd></div>
-                        <div><dt>Resultado</dt><dd>Requisição aberta no departamento Técnico, com trecho do documento na descrição</dd></div>
-                    </dl>
+                    <table class="ledger">
+                        <thead>
+                            <tr><th scope="col">Sem o sistema</th><th scope="col">Com o sistema</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="Sem o sistema">Consultar o portal por CNPJ, uma solicitação de cada vez.</td>
+                            <td data-label="Com o sistema">Você informa o CNPJ e a cidade, e o sistema traz todas as solicitações das unidades da empresa.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Voltar ao portal de tempos em tempos para ver se algo mudou.</td>
+                            <td data-label="Com o sistema">Os processos em análise são consultados todos os dias e mudam de situação sozinhos.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Baixar o PDF e ler o documento para descobrir se ele importa.</td>
+                            <td data-label="Com o sistema">O PDF vem baixado, com o texto extraído e pesquisável dentro do Odoo.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Avisar o time por conta própria.</td>
+                            <td data-label="Com o sistema">Uma regra abre a requisição no departamento certo, com um trecho do documento na descrição.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Não saber quais parceiros têm processo na CETESB.</td>
+                            <td data-label="Com o sistema">Cada parceiro recebe a etiqueta CETESB ou SEM CETESB depois da busca.</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
-        <section class="section">
+        <section class="row">
             <div class="wrap">
-                <div class="section-head">
+                <div class="rail">
                     <h2>Do CNPJ à requisição aberta</h2>
-                    <p>A busca roda em fila, sem travar quem pediu, e não precisa de login na CETESB.</p>
                 </div>
-                <ol class="steps steps--light">
-                    <li><strong>Informe o parceiro</strong><p>CNPJ e cidade do cadastro do cliente ou fornecedor.</p></li>
-                    <li><strong>Busca na CETESB</strong><p>Todas as unidades do CNPJ e suas solicitações de licença.</p></li>
-                    <li><strong>Processos no Odoo</strong><p>Número da SD, processo, objeto, documento e situação de cada solicitação.</p></li>
-                    <li><strong>PDF e texto</strong><p>O documento emitido é baixado e o texto fica pesquisável.</p></li>
-                    <li><strong>Requisição aberta</strong><p>As regras configuradas abrem a requisição no departamento certo.</p></li>
-                </ol>
+                <div>
+                    <ol class="vsteps">
+                        <li><div><strong>Informe o parceiro</strong><p>CNPJ e cidade, do cadastro do cliente ou fornecedor. A busca entra numa fila e não precisa de login na CETESB.</p></div></li>
+                        <li><div><strong>Busca na CETESB</strong><p>Todas as unidades do CNPJ e suas solicitações de licença.</p></div></li>
+                        <li><div><strong>Processos no Odoo</strong><p>Número da SD, processo, objeto, documento e situação de cada solicitação.</p></div></li>
+                        <li><div><strong>PDF e texto</strong><p>O documento emitido é baixado e o texto fica pesquisável.</p></div></li>
+                        <li><div><strong>Requisição aberta</strong><p>As regras configuradas abrem a requisição no departamento certo.</p></div></li>
+                    </ol>
+                </div>
             </div>
         </section>
-        <section class="section" id="regras">
+        <section class="row" id="regras">
             <div class="wrap">
-                <div class="section-head">
+                <div class="rail">
                     <h2>Uma regra abre a requisição sozinha</h2>
                     <p>A regra casa quando todos os filtros preenchidos são atendidos. Filtro em branco vale para qualquer valor.</p>
                 </div>
-                <table class="rules">
-                    <caption class="sr-only">Filtros e resultado de uma regra</caption>
-                    <tbody>
-                        <tr><th scope="row">Tipo de documento</th><td>Licença de Operação, CADRI, Parecer Técnico, Auto de Infração e os demais tipos da CETESB.</td></tr>
-                        <tr><th scope="row">Situação do processo</th><td>Deferido, Indeferido, Emitida, Em Análise e as outras situações do portal.</td></tr>
-                        <tr><th scope="row">Palavras no PDF</th><td>A regra só dispara se o texto do documento contiver uma das palavras, separadas por vírgula.</td></tr>
-                        <tr><th scope="row">Requisição criada</th><td>Departamento, categoria e prazo definidos na regra, com descrição montada a partir do processo e de um trecho do documento.</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        <section class="section">
-            <div class="wrap split">
-                <div class="section-head">
-                    <h2>Atualização diária dos processos</h2>
-                </div>
                 <div>
-                    <div class="prose">
-                        <p>Os processos em análise são consultados todos os dias e mudam de situação assim que a CETESB decide. Quando a situação muda para uma decisão, as regras rodam de novo.</p>
-                        <p>Documentos ainda não publicados são baixados nas rodadas seguintes, tanto do sistema antigo quanto do e-CETESB.</p>
-                        <p>Depois de cada busca, o parceiro recebe a etiqueta CETESB ou SEM CETESB. Com a Base de Empresas, CNPJ e cidade já chegam preenchidos.</p>
+                    <div class="stack">
+                    <div>
+                        <p class="facts-label">Exemplo de regra</p>
+                        <dl class="facts">
+                            <div><dt>Tipo</dt><dd>Parecer Técnico</dd></div>
+                            <div><dt>Situação</dt><dd>Deferido</dd></div>
+                            <div><dt>Palavra no PDF</dt><dd>perigoso, perigosa</dd></div>
+                            <div><dt>Resultado</dt><dd>Requisição aberta no departamento Técnico, com trecho do documento na descrição</dd></div>
+                        </dl>
+                    </div>
+                    <table class="rules">
+                        <caption class="sr-only">Filtros e resultado de uma regra</caption>
+                        <tbody>
+                            <tr><th scope="row">Tipo de documento</th><td>Licença de Operação, CADRI, Parecer Técnico, Auto de Infração e os demais tipos da CETESB.</td></tr>
+                            <tr><th scope="row">Situação do processo</th><td>Deferido, Indeferido, Emitida, Em Análise e as outras situações do portal.</td></tr>
+                            <tr><th scope="row">Palavras no PDF</th><td>A regra só dispara se o texto do documento contiver uma das palavras, separadas por vírgula.</td></tr>
+                            <tr><th scope="row">Requisição criada</th><td>Departamento, categoria e prazo definidos na regra.</td></tr>
+                        </tbody>
+                    </table>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="contact" id="contato">
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Atualização diária</h2>
+                </div>
+                <div>
+                    <div class="prose">
+                        <p>Os processos em análise são consultados todos os dias. Quando a situação muda para uma decisão, as regras rodam de novo.</p>
+                        <p>Documentos ainda não publicados são baixados nas rodadas seguintes, tanto os do sistema antigo quanto os do e-CETESB.</p>
+                        <p>Com a Base de Empresas, CNPJ e cidade já chegam preenchidos para a busca.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta" id="contato">
             <div class="wrap">
                 <div>
                     <h2>Mostramos a busca na CETESB com CNPJs da sua carteira</h2>
                     <p>A demonstração inclui uma regra montada para o seu processo.</p>
                 </div>
-                <div class="actions">
+                <div>
                     <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Licenciamento%20CETESB" class="btn-primary">Pedir demonstração por e-mail</a>
                 </div>
             </div>

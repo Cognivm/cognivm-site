@@ -25,64 +25,107 @@
     <main>
         <section class="hero">
             <div class="wrap">
-                <div>
-                    <h1>Cadastro de empresas com os dados da Receita Federal</h1>
-                    <p class="lead">Encontre empresas por atividade, cidade, porte ou capital social e traga para o Odoo com endereço, CNAEs e sócios. Sem digitar e sem duplicar quem já está cadastrado.</p>
-                    <div class="actions">
-                        <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
-                        <a href="#busca" class="text-link">Ver as formas de busca</a>
-                    </div>
+                <h1>Cadastre empresas <mark>sem digitar</mark>: o CNPJ traz os dados da Receita para o Odoo</h1>
+                <p class="lead">Busque por CNPJ, por nome ou por filtros de atividade e região. A empresa entra com endereço, CNAEs e sócios, sem duplicar.</p>
+                <div class="actions">
+                    <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
+                    <a href="#busca" class="link-ink">Ver as formas de busca</a>
+                </div>
+                <dl class="ficha">
+                    <div><dt>O que é</dt><dd>Conexão do Odoo com a base de CNPJ da Receita Federal. Busca empresas e cria o parceiro com identificação, endereço, atividade, porte e sócios.</dd></div>
+                    <div><dt>Para quem</dt><dd>Comercial, cadastro e fiscal, e quem alimenta a Gestão de Resíduos e o Licenciamento CETESB, que partem do CNPJ.</dd></div>
+                    <div><dt>O que muda</dt><dd>O cadastro deixa de ser digitado. Cada empresa entra uma vez, atualizada, com os sócios como contatos.</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que muda no cadastro</h2>
+                    <p>Do formulário digitado ao CNPJ que preenche tudo.</p>
                 </div>
                 <div>
-                    <p class="facts-label">O que entra em cada parceiro</p>
-                    <dl class="facts">
-                        <div><dt>Identificação</dt><dd>Razão social, nome fantasia, CNPJ</dd></div>
-                        <div><dt>Endereço</dt><dd>Rua, número, complemento, bairro, CEP, município</dd></div>
-                        <div><dt>Atividade</dt><dd>CNAE principal e secundários</dd></div>
-                        <div><dt>Situação</dt><dd>Cadastral, início de atividade, porte, capital social</dd></div>
-                        <div><dt>Contato</dt><dd>Telefones e e-mail da Receita</dd></div>
-                        <div><dt>Sócios</dt><dd>Um contato por sócio, com CPF quando disponível</dd></div>
-                    </dl>
+                    <table class="ledger">
+                        <thead>
+                            <tr><th scope="col">Sem o sistema</th><th scope="col">Com o sistema</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="Sem o sistema">Digitar razão social, endereço e CNAE de cada parceiro.</td>
+                            <td data-label="Com o sistema">O CNPJ preenche identificação, endereço, atividade, porte e capital social.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Endereço e CNAE com erro de digitação.</td>
+                            <td data-label="Com o sistema">Os dados vêm da base da Receita, e o município é ligado ao cadastro de cidades do Odoo.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">O mesmo parceiro cadastrado duas vezes.</td>
+                            <td data-label="Com o sistema">Antes de criar, o sistema procura o CNPJ. Se a empresa existe, ela é atualizada em vez de duplicada.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Sócios anotados num campo de texto.</td>
+                            <td data-label="Com o sistema">Cada sócio vira um contato ligado à empresa, com CPF quando disponível.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Prospecção feita com lista comprada ou planilha.</td>
+                            <td data-label="Com o sistema">Você filtra por atividade, estado, município, porte, capital social e situação, e importa tudo de uma vez.</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
-        <section class="section" id="busca">
+        <section class="row" id="busca">
             <div class="wrap">
-                <div class="section-head">
+                <div class="rail">
                     <h2>Três formas de buscar</h2>
                 </div>
-                <table class="rules">
-                    <caption class="sr-only">Formas de busca</caption>
-                    <tbody>
-                        <tr><th scope="row">Por filtros</th><td>Para prospectar um setor ou uma região. Combine CNAE principal e secundários, estado, município, porte, capital social, situação cadastral e data de abertura. Todas as empresas encontradas entram como parceiros.</td></tr>
-                        <tr><th scope="row">Por nome</th><td>Quando só se sabe parte da razão social, com filtro opcional de estado. Cada resultado entra com os dados completos do CNPJ.</td></tr>
-                        <tr><th scope="row">Pelo próprio cadastro</th><td>Para quem já é cliente. Um botão no parceiro atualiza os dados a partir do CNPJ, e outro traz também os sócios como contatos.</td></tr>
-                    </tbody>
-                </table>
+                <div>
+                    <table class="rules">
+                        <caption class="sr-only">Formas de busca</caption>
+                        <tbody>
+                            <tr><th scope="row">Por filtros</th><td>Para prospectar um setor ou uma região. Combine CNAE principal e secundários, estado, município, porte, capital social, situação cadastral e data de abertura. Todas as empresas encontradas entram como parceiros.</td></tr>
+                            <tr><th scope="row">Por nome</th><td>Quando só se sabe parte da razão social, com filtro opcional de estado. Cada resultado entra com os dados completos do CNPJ.</td></tr>
+                            <tr><th scope="row">Pelo próprio cadastro</th><td>Para quem já é cliente. Um botão no parceiro atualiza os dados a partir do CNPJ, e outro traz também os sócios como contatos.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
-        <section class="section">
-            <div class="wrap split">
-                <div class="section-head">
-                    <h2>O que muda no cadastro de parceiros</h2>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que entra em cada parceiro</h2>
+                    <p>Os campos vêm direto da base pública de CNPJ.</p>
                 </div>
                 <div>
+                    <div class="stack">
+                    <div>
+                        <p class="facts-label">O que entra em cada parceiro</p>
+                        <dl class="facts">
+                            <div><dt>Identificação</dt><dd>Razão social, nome fantasia, CNPJ</dd></div>
+                            <div><dt>Endereço</dt><dd>Rua, número, complemento, bairro, CEP, município</dd></div>
+                            <div><dt>Atividade</dt><dd>CNAE principal e secundários</dd></div>
+                            <div><dt>Situação</dt><dd>Cadastral, início de atividade, porte, capital social</dd></div>
+                            <div><dt>Contato</dt><dd>Telefones e e-mail da Receita</dd></div>
+                            <div><dt>Sócios</dt><dd>Um contato por sócio, com CPF quando disponível</dd></div>
+                        </dl>
+                    </div>
                     <div class="prose">
-                        <p>Antes de criar uma empresa, o sistema procura o CNPJ. Se o parceiro já existe, ele é atualizado em vez de duplicado, e a data da última sincronização fica registrada.</p>
-                        <p>Endereço, CNAE e situação cadastral chegam prontos, sem erro de digitação. Filtrar por atividade e região entrega uma lista de empresas que fazem sentido para o seu negócio.</p>
-                        <p>CNPJ e cidade corretos são o que a Gestão de Resíduos e o Licenciamento CETESB usam para buscar unidades e licenças.</p>
-                        <p>A configuração mostra os créditos disponíveis e quantas consultas já foram feitas.</p>
+                        <p>A data da última sincronização fica registrada no parceiro, e uma nova consulta atualiza tudo. A configuração mostra os créditos disponíveis e quantas consultas já foram feitas.</p>
+                    </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="contact" id="contato">
+        <section class="cta" id="contato">
             <div class="wrap">
                 <div>
                     <h2>Mostramos uma busca com os filtros do seu setor e da sua região</h2>
                     <p>A demonstração termina com as empresas já cadastradas no Odoo.</p>
                 </div>
-                <div class="actions">
+                <div>
                     <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Base%20de%20Empresas" class="btn-primary">Pedir demonstração por e-mail</a>
                 </div>
             </div>
