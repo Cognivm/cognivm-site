@@ -3,88 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COGNIVM - Industrial Intelligence</title>
-    <link rel="stylesheet" href="style.css">
+    <title>COGNIVM | Software ambiental para a indústria</title>
+    <meta name="description" content="Módulos Odoo para resíduos, licenciamento, incineração e produtos químicos, integrados aos órgãos ambientais.">
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    <div class="background-logo"></div>
-
-    <header>
-        <nav>
-            <div class="brand-name">COGNI<span>VM</span></div>
+    <header class="site-nav">
+        <div class="wrap">
+            <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
             <ul>
-                <li><a href="javascript:void(0)" onclick="openModal()">Sobre a Empresa</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#integracoes">Integrações</a></li>
-                <li><a href="mailto:sac@cognivm.com.br" class="btn">Contato</a></li>
+                <li class="hide-sm"><button type="button" class="link" onclick="openModal()">Sobre a empresa</button></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li class="hide-sm"><a href="#integracoes">Integrações</a></li>
+                <li><a href="mailto:sac@cognivm.com.br" class="nav-contact">Contato</a></li>
             </ul>
-        </nav>
-
-        <div class="hero">
-            <div class="hero-content">
-                <h1>Cognição Industrial de Alta Performance</h1>
-                <p>Módulos integrados para Resíduos, Químicos e Gestão Ambiental.</p>
-                <a href="solucoes.html" class="scrolldown">Explore nossas soluções</a>
-            </div>
         </div>
     </header>
 
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <video id="aboutVideo" autoplay muted loop playsinline>
-                <source src="https://github.com/Cognivm/cognivm-site/raw/refs/heads/prod/logo.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos.
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div>
+                    <h1>Resíduos, licenças e incineração dentro do Odoo</h1>
+                    <p class="lead">Módulos para indústrias e destinadores que respondem ao IBAMA e aos órgãos estaduais. Os documentos saem do ERP e chegam ao portal do órgão sem digitação dupla.</p>
+                    <div class="actions">
+                        <a href="residuos.html" class="btn-primary">Conhecer a Gestão de Resíduos</a>
+                        <a href="solucoes.html" class="text-link">Burn Control</a>
+                    </div>
+                </div>
+                <ul class="coverage" aria-label="Órgãos integrados">
+                    <li><span class="uf">BR</span><span><strong>SINIR</strong> <small>IBAMA</small></span></li>
+                    <li><span class="uf">SP</span><span><strong>SIGOR e Licenciamento</strong> <small>CETESB</small></span></li>
+                    <li><span class="uf">SC</span><span><strong>MTR</strong> <small>IMA</small></span></li>
+                    <li><span class="uf">RJ</span><span><strong>MTR</strong> <small>INEA</small></span></li>
+                    <li><span class="uf">MG</span><span><strong>MTR</strong> <small>FEAM</small></span></li>
+                    <li><span class="uf">ES</span><span><strong>MTR</strong> <small>IEMA</small></span></li>
+                    <li><span class="uf">RS</span><span><strong>MTR</strong> <small>FEPAM</small></span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="produtos">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Produtos</h2>
+                </div>
+                <ul class="products">
+                    <li>
+                        <h3>Gestão de Resíduos</h3>
+                        <div>
+                            <p>MTR, CDF e DMR integrados ao SINIR e aos sistemas de SP, SC, RJ, MG, ES e RS. Recebimento com alteração validada pelo gerador, certificado montado a partir dos manifestos recebidos e resíduo controlado no estoque.</p>
+                            <a href="residuos.html" class="text-link">Ver plataformas e documentos</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Burn Control</h3>
+                        <div>
+                            <p>Operação de incineração com limites da Licença de Operação, leitura do CLP em tempo real, parada automática por violação e relatório diário por turno.</p>
+                            <a href="solucoes.html" class="text-link">Ver o Burn Control</a>
+                        </div>
+                    </li>
+                    <li class="minor">
+                        <h3>Licenciamento CETESB</h3>
+                        <div>
+                            <p>Acompanha as solicitações de licença de cada cliente ou parceiro no portal da CETESB, baixa o documento emitido em PDF e abre uma demanda interna quando a regra que você definiu é atendida.</p>
+                        </div>
+                    </li>
+                    <li class="minor">
+                        <h3>Gestão Química</h3>
+                        <div>
+                            <p>Cadastro de produtos químicos com elaboração de FISPQ e controle de inventário.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section band" id="integracoes">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Integrações com órgãos ambientais</h2>
+                    <p>Credenciais, sessão e formato de cada portal ficam por conta do sistema. O usuário troca de órgão no topo da tela, como troca de empresa.</p>
+                </div>
+                <ul class="steps steps--plain">
+                    <li><strong>SINIR</strong><p>IBAMA, nacional. Emissão de MTR, CDF e DMR.</p></li>
+                    <li><strong>SIGOR</strong><p>CETESB, São Paulo. Emissão de MTR, CDF e DMR.</p></li>
+                    <li><strong>IMA</strong><p>Santa Catarina. Emissão de MTR, CDF e DMR.</p></li>
+                    <li><strong>INEA, FEAM, IEMA, FEPAM</strong><p>RJ, MG, ES e RS. MTR importado, recebimento, CDF e DMR.</p></li>
+                    <li><strong>Licenciamento CETESB</strong><p>Situação das solicitações e documentos emitidos.</p></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="wrap">
+                <div>
+                    <h2>Quer ver com os seus dados?</h2>
+                    <p>Fazemos a demonstração com a plataforma do seu órgão e as suas unidades cadastradas.</p>
+                </div>
+                <div class="actions">
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o" class="btn-primary">Agendar demonstração</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>Dúvidas ou suporte: <a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></span>
+            <span>&copy; 2026 COGNIVM</span>
+        </div>
+    </footer>
+
+    <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-label="Vídeo institucional">
+        <div class="modal-inner">
+            <button type="button" class="modal-close" onclick="closeModal()">Fechar</button>
+            <video id="aboutVideo" muted loop playsinline preload="none">
+                <source src="logo.mp4" type="video/mp4">
             </video>
         </div>
     </div>
 
-    <section id="expertise">
-        <h2>Expertise Ambiental & Industrial</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Gestão de Resíduos (SIGOR/CETESB)</h3>
-                <p>Emissão automatizada de MTR, DMR e CDF com rastreabilidade total e conformidade regulatória.</p>
-            </div>
-            <div class="card">
-                <h3>Inteligência de Documentos</h3>
-                <p>Análise de CADRI e Licenças de Operação com tomada de decisão baseada em dados.</p>
-            </div>
-            <div class="card">
-                <h3>Gestão Química</h3>
-                <p>Controle completo de produtos químicos com elaboração de FISPQ e gestão de inventário.</p>
-            </div>
-            <div class="card">
-                <h3>Compliance Ambiental</h3>
-                <p>Automação de relatórios integrados aos órgãos ambientais.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>Dúvidas ou Suporte: <strong>sac@cognivm.com.br</strong></p>
-        <p>&copy; 2026 COGNIVM - Todos os direitos reservados.</p>
-    </footer>
-
     <script>
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('aboutVideo');
         function openModal() {
-            document.getElementById("videoModal").style.display = "block";
-            const video = document.getElementById("aboutVideo");
+            modal.classList.add('open');
             video.currentTime = 0;
             video.play();
         }
-
         function closeModal() {
-            document.getElementById("videoModal").style.display = "none";
-            const video = document.getElementById("aboutVideo");
+            modal.classList.remove('open');
             video.pause();
         }
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("videoModal")) {
-                closeModal();
-            }
-        }
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
     </script>
 </body>
 </html>
