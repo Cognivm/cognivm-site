@@ -17,31 +17,23 @@
                 <li class="hide-md"><a href="licenciamento.html">Licenciamento</a></li>
                 <li class="hide-md"><a href="empresas.html">Base de Empresas</a></li>
                 <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
-                <li><a href="mailto:sac@cognivm.com.br" class="nav-contact">Contato</a></li>
+                <li><a href="#contato" class="nav-contact">Contato</a></li>
             </ul>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero hero--single">
             <div class="wrap">
                 <div>
                     <h1>Controle de queima dentro dos limites da sua Licença de Operação</h1>
                     <p class="lead">Do resíduo liberado ao relatório do turno, com leitura do CLP do incinerador, alertas por componente e parada automática quando um limite é ultrapassado.</p>
                     <div class="actions">
-                        <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Controle%20de%20Queima" class="btn-primary">Agendar demonstração</a>
+                        <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
                         <a href="#bloqueios" class="text-link">Ver o que o sistema bloqueia</a>
                     </div>
                 </div>
-                <ul class="coverage" aria-label="Caminho do resíduo na queima">
-                    <li><span class="uf">1</span><span><strong>MTR</strong> <small>resíduo entra no estoque</small></span></li>
-                    <li><span class="uf">2</span><span><strong>Liberação</strong> <small>CADRI válido e com saldo</small></span></li>
-                    <li><span class="uf">3</span><span><strong>Turno</strong> <small>A, B ou C, com encarregado</small></span></li>
-                    <li><span class="uf">4</span><span><strong>Plano de queima</strong> <small>taxas de alimentação aprovadas</small></span></li>
-                    <li><span class="uf">5</span><span><strong>Queima</strong> <small>leituras do CLP e alertas</small></span></li>
-                    <li><span class="uf">6</span><span><strong>Relatório diário</strong> <small>validado pela supervisão</small></span></li>
-                    <li><span class="uf">7</span><span><strong>Baixa de estoque</strong> <small>automática</small></span></li>
-                </ul>
+
             </div>
         </section>
         <section class="section" id="bloqueios">
@@ -64,63 +56,41 @@
             </div>
         </section>
         <section class="section">
-            <div class="wrap">
+            <div class="wrap split">
                 <div class="section-head">
-                    <h2>Monitoramento durante a queima</h2>
+                    <h2>Leitura do CLP e painel do turno</h2>
+                        <p>Integração por API, com chave própria para o equipamento.</p>
                 </div>
-                <div class="docs">
-                    <article class="doc doc-lead">
-                        <h3>Leituras do CLP</h3>
-                        <p class="doc-name">Integração por API com chave própria</p>
-                        <ul>
-                            <li>O CLP envia alimentação, temperaturas, intertravamento e emissões a cada leitura, em torno de 20 segundos.</li>
-                            <li>Cada componente (CO, NOx, SO2, HCl e os demais da sua licença) é comparado com o limite cadastrado da LO.</li>
-                            <li>Limiar de atenção configurável por componente, por exemplo 90% do limite.</li>
-                            <li>Painel do turno com a taxa total contra o limite, a última leitura, a tabela de componentes e os alertas ativos.</li>
-                            <li>Botão de parada de emergência no próprio painel.</li>
-                        </ul>
-                    </article>
-                    <article class="doc">
-                        <h3>Alertas</h3>
-                        <p class="doc-name">Atenção, crítico e parada</p>
-                        <ul>
-                            <li>Cada alerta registra o gatilho, o componente e o horário.</li>
-                            <li>Encarregados reconhecem os alertas de atenção e críticos.</li>
-                            <li>Alerta de parada pausa o plano até a retomada autorizada.</li>
-                        </ul>
-                    </article>
-                    <article class="doc">
-                        <h3>Relatório diário</h3>
-                        <p class="doc-name">Fechamento do turno</p>
-                        <ul>
-                            <li>Gerado ao fechar o turno, com o que foi queimado de cada resíduo.</li>
-                            <li>Queima parcial em vários turnos, com o saldo acompanhado.</li>
-                            <li>A validação dá baixa no estoque automaticamente.</li>
-                        </ul>
-                    </article>
+                <div>
+                    <div class="prose">
+                        <p>O CLP envia alimentação, temperaturas, intertravamento e emissões a cada leitura, em torno de 20 segundos. Cada componente da sua licença (CO, NOx, SO2, HCl e os demais) é comparado com o limite cadastrado da LO, com um limiar de atenção por componente, por exemplo 90% do limite.</p>
+                        <p>O painel do turno mostra a taxa total contra o limite, a última leitura, a tabela de componentes e os alertas ativos. A parada de emergência é um botão do próprio painel.</p>
+                        <p>Os alertas têm três níveis: atenção, crítico e parada. Cada um registra o gatilho, o componente e o horário. Encarregados reconhecem os de atenção e críticos, e o alerta de parada pausa o plano até a retomada autorizada.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="section band">
-            <div class="wrap">
-                <div class="section-head">
-                    <h2>Um turno de operação</h2>
-                    <p>Do jeito que a equipe trabalha no chão da fábrica.</p>
-                </div>
-                <ol class="steps">
-                    <li><strong>Libere o resíduo</strong><p>A área administrativa registra embalagens e pesagem e libera o resíduo contra um CADRI válido e com saldo.</p></li>
-                    <li><strong>Abra o turno</strong><p>O encarregado abre o turno A, B ou C com a equipe.</p></li>
-                    <li><strong>Monte o plano</strong><p>Resíduos, embalagens por hora e taxa de alimentação, aprovados dentro do limite.</p></li>
-                    <li><strong>Queime</strong><p>O CLP alimenta o painel e o sistema cuida dos alertas.</p></li>
-                    <li><strong>Feche e valide</strong><p>O relatório diário sai do turno e a validação baixa o estoque.</p></li>
-                </ol>
             </div>
         </section>
         <section class="section">
             <div class="wrap">
                 <div class="section-head">
+                    <h2>Um turno de operação</h2>
+                    <p>Do jeito que a equipe trabalha no chão da fábrica.</p>
+                </div>
+                <ol class="steps steps--light">
+                    <li><strong>Libere o resíduo</strong><p>A área administrativa registra embalagens e pesagem e libera o resíduo contra um CADRI válido e com saldo.</p></li>
+                    <li><strong>Abra o turno</strong><p>O encarregado abre o turno A, B ou C com a equipe.</p></li>
+                    <li><strong>Monte o plano</strong><p>Resíduos, embalagens por hora e taxa de alimentação, aprovados dentro do limite.</p></li>
+                    <li><strong>Queime</strong><p>O CLP alimenta o painel e o sistema cuida dos alertas.</p></li>
+                    <li><strong>Feche e valide</strong><p>O relatório diário sai do turno com o que foi queimado de cada resíduo, inclusive queimas parciais em vários turnos. A validação baixa o estoque.</p></li>
+                </ol>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap split">
+                <div class="section-head">
                     <h2>Cada um com o seu acesso</h2>
                 </div>
+                <div>
                 <table class="rules">
                     <caption class="sr-only">Perfis de acesso</caption>
                     <tbody>
@@ -131,16 +101,17 @@
                         <tr><th scope="row">Integração CLP</th><td>Usuário só do equipamento: envia leituras e nada mais.</td></tr>
                     </tbody>
                 </table>
+                </div>
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contato">
             <div class="wrap">
                 <div>
-                    <h2>Opera um incinerador?</h2>
-                    <p>Mostramos o controle de queima com os limites da sua licença e a integração com o seu CLP.</p>
+                    <h2>Mostramos o controle de queima com os limites da sua licença</h2>
+                    <p>A demonstração usa a configuração de um incinerador e a integração com o CLP.</p>
                 </div>
                 <div class="actions">
-                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Controle%20de%20Queima" class="btn-primary">Agendar demonstração</a>
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Controle%20de%20Queima" class="btn-primary">Pedir demonstração por e-mail</a>
                 </div>
             </div>
         </section>

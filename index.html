@@ -12,13 +12,13 @@
         <div class="wrap">
             <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
             <ul>
-                <li class="hide-sm"><button type="button" class="link" onclick="openModal()">Sobre</button></li>
+                <li class="hide-sm"><button type="button" class="link" id="openVideo">Vídeo institucional</button></li>
                 <li class="hide-md"><a href="residuos.html">Resíduos</a></li>
                 <li class="hide-md"><a href="controle-de-queima.html">Controle de Queima</a></li>
                 <li class="hide-md"><a href="licenciamento.html">Licenciamento</a></li>
                 <li class="hide-md"><a href="empresas.html">Base de Empresas</a></li>
                 <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
-                <li><a href="mailto:sac@cognivm.com.br" class="nav-contact">Contato</a></li>
+                <li><a href="#contato" class="nav-contact">Contato</a></li>
             </ul>
         </div>
     </header>
@@ -68,7 +68,7 @@
                     <li>
                         <h3>Licenciamento CETESB</h3>
                         <div>
-                            <p>As solicitações de licença de cada parceiro acompanhadas no portal da CETESB, com o PDF do documento emitido e demandas internas abertas por regras.</p>
+                            <p>As solicitações de licença de cada parceiro acompanhadas no portal da CETESB, com o PDF do documento emitido e requisições internas abertas por regras.</p>
                             <a href="licenciamento.html" class="text-link">Ver o Licenciamento</a>
                         </div>
                     </li>
@@ -88,29 +88,14 @@
                 </ul>
             </div>
         </section>
-        <section class="section band" id="integracoes">
-            <div class="wrap">
-                <div class="section-head">
-                    <h2>Integrações com órgãos ambientais</h2>
-                    <p>Credenciais, sessão e formato de cada portal ficam por conta do sistema. O usuário troca de órgão no topo da tela, como troca de empresa.</p>
-                </div>
-                <ul class="steps steps--plain">
-                    <li><strong>SINIR</strong><p>IBAMA, nacional. MTR, CDF e DMR, com emissão de MTR.</p></li>
-                    <li><strong>SIGOR</strong><p>CETESB, São Paulo. MTR, CDF e DMR, com emissão de MTR.</p></li>
-                    <li><strong>IMA</strong><p>Santa Catarina. MTR, CDF e DMR, com emissão de MTR.</p></li>
-                    <li><strong>INEA, FEAM, IEMA, FEPAM</strong><p>RJ, MG, ES e RS. MTR, CDF e DMR.</p></li>
-                    <li><strong>Licenciamento CETESB</strong><p>Situação das solicitações e documentos emitidos.</p></li>
-                </ul>
-            </div>
-        </section>
-        <section class="contact">
+        <section class="contact" id="contato">
             <div class="wrap">
                 <div>
-                    <h2>Quer ver com os seus dados?</h2>
-                    <p>Fazemos a demonstração com a plataforma do seu órgão e as suas unidades cadastradas.</p>
+                    <h2>Fazemos a demonstração com a plataforma do seu órgão</h2>
+                    <p>As suas unidades cadastradas e o seu estado, funcionando de verdade.</p>
                 </div>
                 <div class="actions">
-                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20" class="btn-primary">Agendar demonstração</a>
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20" class="btn-primary">Pedir demonstração por e-mail</a>
                 </div>
             </div>
         </section>
@@ -125,7 +110,7 @@
 
     <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-label="Vídeo institucional">
         <div class="modal-inner">
-            <button type="button" class="modal-close" onclick="closeModal()">Fechar</button>
+            <button type="button" class="modal-close" id="closeVideo">Fechar</button>
             <video id="aboutVideo" muted loop playsinline preload="none">
                 <source src="logo.mp4" type="video/mp4">
             </video>
@@ -135,17 +120,27 @@
     <script>
         const modal = document.getElementById('videoModal');
         const video = document.getElementById('aboutVideo');
+        const opener = document.getElementById('openVideo');
+        const closer = document.getElementById('closeVideo');
         function openModal() {
             modal.classList.add('open');
             video.currentTime = 0;
             video.play();
+            closer.focus();
         }
         function closeModal() {
             modal.classList.remove('open');
             video.pause();
+            opener.focus();
         }
+        opener.addEventListener('click', openModal);
+        closer.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('open')) return;
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'Tab') { e.preventDefault(); closer.focus(); }
+        });
     </script>
 </body>
 </html>

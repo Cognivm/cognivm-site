@@ -17,7 +17,7 @@
                 <li class="hide-md"><a href="licenciamento.html">Licenciamento</a></li>
                 <li class="hide-md"><a href="empresas.html" aria-current="page">Base de Empresas</a></li>
                 <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
-                <li><a href="mailto:sac@cognivm.com.br" class="nav-contact">Contato</a></li>
+                <li><a href="#contato" class="nav-contact">Contato</a></li>
             </ul>
         </div>
     </header>
@@ -29,18 +29,21 @@
                     <h1>Cadastro de empresas com os dados da Receita Federal</h1>
                     <p class="lead">Encontre empresas por atividade, cidade, porte ou capital social e traga para o Odoo com endereço, CNAEs e sócios. Sem digitar e sem duplicar quem já está cadastrado.</p>
                     <div class="actions">
-                        <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Base%20de%20Empresas" class="btn-primary">Agendar demonstração</a>
+                        <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
                         <a href="#busca" class="text-link">Ver as formas de busca</a>
                     </div>
                 </div>
-                <ul class="coverage" aria-label="Filtros de busca">
-                    <li><span class="uf">CNAE</span><span><strong>Atividade principal</strong> <small>e secundárias</small></span></li>
-                    <li><span class="uf">UF</span><span><strong>Estado e município</strong> <small></small></span></li>
-                    <li><span class="uf">R$</span><span><strong>Capital social</strong> <small>mínimo e máximo</small></span></li>
-                    <li><span class="uf">ME</span><span><strong>Porte da empresa</strong> <small>ME, EPP e demais</small></span></li>
-                    <li><span class="uf">SIT</span><span><strong>Situação cadastral</strong> <small>e data de abertura</small></span></li>
-                    <li><span class="uf">SN</span><span><strong>Simples e MEI</strong> <small></small></span></li>
-                </ul>
+                <div>
+                    <p class="facts-label">O que entra em cada parceiro</p>
+                    <dl class="facts">
+                        <div><dt>Identificação</dt><dd>Razão social, nome fantasia, CNPJ</dd></div>
+                        <div><dt>Endereço</dt><dd>Rua, número, complemento, bairro, CEP, município</dd></div>
+                        <div><dt>Atividade</dt><dd>CNAE principal e secundários</dd></div>
+                        <div><dt>Situação</dt><dd>Cadastral, início de atividade, porte, capital social</dd></div>
+                        <div><dt>Contato</dt><dd>Telefones e e-mail da Receita</dd></div>
+                        <div><dt>Sócios</dt><dd>Um contato por sócio, com CPF quando disponível</dd></div>
+                    </dl>
+                </div>
             </div>
         </section>
         <section class="section" id="busca">
@@ -48,95 +51,39 @@
                 <div class="section-head">
                     <h2>Três formas de buscar</h2>
                 </div>
-                <div class="docs">
-                    <article class="doc doc-lead">
-                        <h3>Por filtros</h3>
-                        <p class="doc-name">Para prospectar uma região ou um setor</p>
-                        <ul>
-                            <li>Combine CNAE principal e secundários, estado, município, porte, capital social, situação cadastral e data de abertura.</li>
-                            <li>Todas as empresas encontradas entram como parceiros, prontas para o comercial.</li>
-                            <li>Útil para achar, por exemplo, as indústrias de um setor que geram resíduos na sua região.</li>
-                        </ul>
-                    </article>
-                    <article class="doc">
-                        <h3>Por nome</h3>
-                        <p class="doc-name">Quando só se sabe a razão social</p>
-                        <ul>
-                            <li>Busca por parte do nome, com filtro opcional de estado.</li>
-                            <li>Cada resultado entra com os dados completos do CNPJ.</li>
-                        </ul>
-                    </article>
-                    <article class="doc">
-                        <h3>Pelo próprio cadastro</h3>
-                        <p class="doc-name">Para quem já é cliente</p>
-                        <ul>
-                            <li>Um botão no parceiro atualiza os dados a partir do CNPJ.</li>
-                            <li>Outro traz também os sócios como contatos.</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <section class="section band">
-            <div class="wrap">
-                <div class="section-head">
-                    <h2>O que entra no cadastro</h2>
-                    <p>Os campos vêm direto da base pública de CNPJ e ficam no parceiro do Odoo.</p>
-                </div>
                 <table class="rules">
-                    <caption class="sr-only">Campos importados</caption>
+                    <caption class="sr-only">Formas de busca</caption>
                     <tbody>
-                        <tr><th scope="row">Identificação</th><td>Razão social, nome fantasia, CNPJ e raiz do CNPJ.</td></tr>
-                        <tr><th scope="row">Endereço</th><td>Logradouro, número, complemento, bairro, CEP e município ligado ao cadastro de cidades do Odoo.</td></tr>
-                        <tr><th scope="row">Atividade</th><td>CNAE principal e CNAEs secundários.</td></tr>
-                        <tr><th scope="row">Situação</th><td>Situação cadastral, data de início de atividade, porte e capital social.</td></tr>
-                        <tr><th scope="row">Contato</th><td>Telefones e e-mail registrados na Receita.</td></tr>
-                        <tr><th scope="row">Sócios</th><td>Cada sócio vira um contato ligado à empresa, com CPF quando disponível.</td></tr>
+                        <tr><th scope="row">Por filtros</th><td>Para prospectar um setor ou uma região. Combine CNAE principal e secundários, estado, município, porte, capital social, situação cadastral e data de abertura. Todas as empresas encontradas entram como parceiros.</td></tr>
+                        <tr><th scope="row">Por nome</th><td>Quando só se sabe parte da razão social, com filtro opcional de estado. Cada resultado entra com os dados completos do CNPJ.</td></tr>
+                        <tr><th scope="row">Pelo próprio cadastro</th><td>Para quem já é cliente. Um botão no parceiro atualiza os dados a partir do CNPJ, e outro traz também os sócios como contatos.</td></tr>
                     </tbody>
                 </table>
             </div>
         </section>
         <section class="section">
-            <div class="wrap">
+            <div class="wrap split">
                 <div class="section-head">
-                    <h2>Por que usar</h2>
+                    <h2>O que muda no cadastro de parceiros</h2>
                 </div>
-                <ul class="details">
-                    <li>
-                        <strong>Nada digitado à mão</strong>
-                        <p>Endereço, CNAE e situação cadastral chegam prontos, sem erro de digitação.</p>
-                    </li>
-                    <li>
-                        <strong>Sem parceiro duplicado</strong>
-                        <p>Antes de criar, o sistema procura o CNPJ. Se a empresa já existe, ela é atualizada.</p>
-                    </li>
-                    <li>
-                        <strong>Prospecção com critério</strong>
-                        <p>Filtrar por atividade e região entrega uma lista de empresas que fazem sentido para o seu negócio.</p>
-                    </li>
-                    <li>
-                        <strong>Base pronta para os outros módulos</strong>
+                <div>
+                    <div class="prose">
+                        <p>Antes de criar uma empresa, o sistema procura o CNPJ. Se o parceiro já existe, ele é atualizado em vez de duplicado, e a data da última sincronização fica registrada.</p>
+                        <p>Endereço, CNAE e situação cadastral chegam prontos, sem erro de digitação. Filtrar por atividade e região entrega uma lista de empresas que fazem sentido para o seu negócio.</p>
                         <p>CNPJ e cidade corretos são o que a Gestão de Resíduos e o Licenciamento CETESB usam para buscar unidades e licenças.</p>
-                    </li>
-                    <li>
-                        <strong>Consumo sob controle</strong>
                         <p>A configuração mostra os créditos disponíveis e quantas consultas já foram feitas.</p>
-                    </li>
-                    <li>
-                        <strong>Dados sempre atualizáveis</strong>
-                        <p>A data da última sincronização fica no parceiro, e uma nova consulta atualiza tudo.</p>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contato">
             <div class="wrap">
                 <div>
-                    <h2>Quer montar sua base de clientes?</h2>
-                    <p>Mostramos uma busca com os filtros do seu setor e da sua região.</p>
+                    <h2>Mostramos uma busca com os filtros do seu setor e da sua região</h2>
+                    <p>A demonstração termina com as empresas já cadastradas no Odoo.</p>
                 </div>
                 <div class="actions">
-                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Base%20de%20Empresas" class="btn-primary">Agendar demonstração</a>
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Base%20de%20Empresas" class="btn-primary">Pedir demonstração por e-mail</a>
                 </div>
             </div>
         </section>
