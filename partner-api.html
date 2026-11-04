@@ -33,7 +33,7 @@
                     <a href="#como-funciona" class="link-ink">Ver como funciona</a>
                 </div>
                 <dl class="ficha">
-                    <div><dt>O que é</dt><dd>Conexão com a base de CNPJ da Receita Federal. Busca empresas e cria o parceiro com identificação, endereço, atividade, porte e sócios.</dd></div>
+                    <div><dt>O que é</dt><dd>Conexão com a base de CNPJ da Receita Federal. Busca empresas e cria o cadastro com identificação, endereço, atividade, porte e sócios.</dd></div>
                     <div><dt>Para quem</dt><dd>Comercial, cadastro e fiscal, e quem alimenta a Gestão de Resíduos e o Finder, que partem do CNPJ.</dd></div>
                     <div><dt>O que muda</dt><dd>O cadastro deixa de ser digitado. Cada empresa entra uma vez, atualizada, com os sócios como contatos.</dd></div>
                 </dl>
@@ -58,7 +58,7 @@
                         </tr>
                         <tr>
                             <td data-label="Sem o sistema">Endereço e CNAE com erro de digitação.</td>
-                            <td data-label="Com o sistema">Os dados vêm da base da Receita, e o município é ligado ao cadastro de cidades do sistema.</td>
+                            <td data-label="Com o sistema">Os dados vêm da base da Receita, com o município no formato certo.</td>
                         </tr>
                         <tr>
                             <td data-label="Sem o sistema">O mesmo parceiro cadastrado duas vezes.</td>
@@ -81,15 +81,13 @@
             <div class="wrap">
                 <div class="rail">
                     <h2>Como funciona</h2>
-                    <p>Do primeiro acesso à lista de empresas cadastradas.</p>
+                    <p>Da busca à empresa cadastrada.</p>
                 </div>
                 <div>
                     <ol class="vsteps">
-                        <li><div><strong>Configure a conexão</strong><p>Em Partner API, crie a configuração com nome, endereço da API, usuário e senha. Clique em <strong>Test Connection</strong> e em <strong>Authenticate</strong>.</p></div></li>
-                        <li><div><strong>Sincronize os municípios</strong><p><strong>Sincronizar Municípios</strong> liga a cidade da Receita à cidade do cadastro, para o endereço chegar certo.</p></div></li>
-                        <li><div><strong>Escolha como buscar</strong><p>Por filtros, por nome ou pelo próprio cadastro do parceiro. Veja as três formas abaixo.</p></div></li>
-                        <li><div><strong>Traga as empresas</strong><p><strong>Sync Partners</strong> importa o resultado dos filtros. <strong>Buscar por Nome</strong> importa o que a busca encontrou.</p></div></li>
-                        <li><div><strong>Acompanhe o consumo</strong><p>A configuração mostra os créditos que restam, quantas consultas já foram feitas e a data da última sincronização.</p></div></li>
+                        <li><div><strong>Escolha como buscar</strong><p>Pelo CNPJ de uma empresa, pelo nome ou por filtros de atividade, região, porte e capital social.</p></div></li>
+                        <li><div><strong>Receba as empresas prontas</strong><p>Cada empresa entra no cadastro com identificação, endereço, atividade, porte e sócios, sem digitar nada.</p></div></li>
+                        <li><div><strong>Mantenha atualizado</strong><p>Uma nova consulta atualiza quem já está cadastrado, sem duplicar.</p></div></li>
                     </ol>
                 </div>
             </div>
@@ -97,57 +95,24 @@
         <section class="row">
             <div class="wrap">
                 <div class="rail">
-                    <h2>Três formas de buscar</h2>
+                    <h2>Para prospectar</h2>
                 </div>
                 <div>
-                    <table class="rules">
-                        <caption class="sr-only">Formas de buscar</caption>
-                        <tbody>
-                            <tr><th scope="row">Por filtros</th><td>Para prospectar um setor ou uma região. Todas as empresas encontradas entram como parceiros. Os filtros estão na lista abaixo.</td></tr>
-                            <tr><th scope="row">Por nome</th><td>Quando só se sabe parte da razão social. Aceita filtro opcional de estado, e cada resultado entra com os dados completos do CNPJ.</td></tr>
-                            <tr><th scope="row">Pelo cadastro do parceiro</th><td>Para quem já é cliente. Um botão atualiza os dados a partir do CNPJ, e outro faz a sincronização completa, com os sócios como contatos.</td></tr>
-                        </tbody>
-                    </table>
+                    <div class="prose">
+                        <p>Para prospectar um setor ou uma região, combine na mesma busca a atividade (principal e secundárias), o estado, o município, o porte, o capital social, a situação cadastral e a data de abertura. Todas as empresas encontradas entram no cadastro, prontas para o comercial.</p>
+                        <p>Quando só se conhece parte do nome, a busca por nome traz a empresa com os dados completos do CNPJ.</p>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="row">
             <div class="wrap">
                 <div class="rail">
-                    <h2>Os filtros</h2>
-                    <p>Cada grupo é uma aba da configuração.</p>
+                    <h2>O que você recebe</h2>
                 </div>
                 <div>
-                    <table class="rules">
-                        <caption class="sr-only">Filtros de busca</caption>
-                        <tbody>
-                            <tr><th scope="row">Localização</th><td>Estado e município.</td></tr>
-                            <tr><th scope="row">Dados da Empresa</th><td>Capital social mínimo e máximo, situação cadastral, porte da empresa e período de início da atividade.</td></tr>
-                            <tr><th scope="row">CNAE</th><td>Atividade principal e atividades secundárias.</td></tr>
-                            <tr><th scope="row">Simples/Nacional</th><td>Optante pelo Simples e optante pelo MEI.</td></tr>
-                            <tr><th scope="row">Limite de resultados</th><td>Quantas empresas trazer por busca. O padrão é 100.</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <section class="row">
-            <div class="wrap">
-                <div class="rail">
-                    <h2>O que entra em cada parceiro</h2>
-                    <p>Os campos vêm direto da base pública de CNPJ.</p>
-                </div>
-                <div>
-                    <div>
-                        <p class="facts-label">O que entra em cada parceiro</p>
-                        <dl class="facts">
-                            <div><dt>Identificação</dt><dd>Razão social, nome fantasia, CNPJ</dd></div>
-                            <div><dt>Endereço</dt><dd>Rua, número, complemento, bairro, CEP, município</dd></div>
-                            <div><dt>Atividade</dt><dd>CNAE principal e secundários</dd></div>
-                            <div><dt>Situação</dt><dd>Cadastral, início de atividade, porte, capital social</dd></div>
-                            <div><dt>Contato</dt><dd>Telefones e e-mail da Receita</dd></div>
-                            <div><dt>Sócios</dt><dd>Um contato por sócio, com CPF quando disponível</dd></div>
-                        </dl>
+                    <div class="prose">
+                        <p>Cada empresa chega com razão social, nome fantasia, CNPJ, endereço completo, atividade, situação cadastral, porte, capital social, telefones e e-mail da Receita. Os sócios entram como contatos ligados à empresa, com CPF quando disponível.</p>
                     </div>
                 </div>
             </div>

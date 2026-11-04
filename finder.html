@@ -40,92 +40,53 @@
             </div>
         </section>
 
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que muda no acompanhamento</h2>
+                    <p>Do portal consultado à mão ao processo que avisa.</p>
+                </div>
+                <div>
+                    <table class="ledger">
+                        <thead>
+                            <tr><th scope="col">Sem o sistema</th><th scope="col">Com o sistema</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="Sem o sistema">Consultar o portal por CNPJ, uma solicitação de cada vez.</td>
+                            <td data-label="Com o sistema">Você informa o CNPJ e o sistema traz todas as solicitações da empresa.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Voltar ao portal de tempos em tempos para ver se algo mudou.</td>
+                            <td data-label="Com o sistema">Os processos em análise são consultados todos os dias e mudam de situação sozinhos.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Baixar o PDF e ler o documento para descobrir se ele importa.</td>
+                            <td data-label="Com o sistema">O PDF já vem baixado, com o texto pesquisável.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Avisar o time por conta própria.</td>
+                            <td data-label="Com o sistema">Uma regra abre a requisição no departamento certo, com um trecho do documento na descrição.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
         <section class="row" id="como-funciona">
             <div class="wrap">
                 <div class="rail">
                     <h2>Como funciona</h2>
-                    <p>Do clique em Buscar Processos ao parceiro etiquetado.</p>
+                    <p>Do CNPJ à requisição aberta.</p>
                 </div>
                 <div>
                     <ol class="vsteps">
-                        <li><div><strong>Peça a busca no parceiro</strong><p>Abra o parceiro em Contatos e vá na aba <strong>Processos</strong>. Se quiser, informe a Data de Início. Clique em <strong>Buscar Processos</strong>. O parceiro precisa ter CNPJ e cidade.</p></div></li>
-                        <li><div><strong>A busca entra na fila</strong><p>Uma rotina roda a cada 5 minutos e processa até 5 buscas por vez. Cada busca leva de alguns segundos a alguns minutos.</p></div></li>
-                        <li><div><strong>O Finder consulta a CETESB</strong><p>Pesquisa o CNPJ, aproveita só as unidades da cidade do parceiro e confere o CNPJ de cada uma. Não precisa de login na CETESB.</p></div></li>
-                        <li><div><strong>Cada solicitação vira um processo</strong><p>Lê o histórico de solicitações de cada unidade. Para as novas, baixa o PDF do documento, extrai o texto e cria o processo. As que já existem só têm a situação atualizada.</p></div></li>
-                        <li><div><strong>As regras rodam</strong><p>Cada processo novo é comparado com as regras. Quando uma casa, a requisição é aberta no departamento certo.</p></div></li>
-                        <li><div><strong>O parceiro ganha uma etiqueta</strong><p>CETESB, se algum processo foi criado ou atualizado, ou SEM CETESB. O histórico do parceiro registra o resultado: quantos processos foram criados, atualizados ou deram erro.</p></div></li>
+                        <li><div><strong>Informe o parceiro</strong><p>Basta o CNPJ e a cidade que já estão no cadastro.</p></div></li>
+                        <li><div><strong>O sistema consulta a CETESB</strong><p>Traz todas as solicitações de licença da empresa, sem você entrar no portal.</p></div></li>
+                        <li><div><strong>Cada solicitação vira um processo</strong><p>Com situação, data e o PDF do documento emitido, já com o texto pesquisável.</p></div></li>
+                        <li><div><strong>A regra avisa o time</strong><p>Se o documento for do tipo que você definiu, a requisição abre no departamento certo.</p></div></li>
+                        <li><div><strong>O acompanhamento continua sozinho</strong><p>Todo dia, os processos em análise são consultados de novo. Quando a CETESB decide, a situação muda, o PDF é baixado e as regras rodam.</p></div></li>
                     </ol>
-                </div>
-            </div>
-        </section>
-        <section class="row">
-            <div class="wrap">
-                <div class="rail">
-                    <h2>O que você vê na tela</h2>
-                    <p>Menus, colunas e abas do Finder.</p>
-                </div>
-                <div>
-                    <div class="stack">
-                    <div>
-                        <p class="facts-label">Menus</p>
-                        <dl class="facts">
-                            <div><dt>Finder › Processos</dt><dd>Todas as solicitações importadas, de todos os parceiros.</dd></div>
-                            <div><dt>Finder › Jobs de Busca</dt><dd>Fila e histórico das buscas, com o resultado ou o erro de cada uma.</dd></div>
-                            <div><dt>Finder › Configuração › Buscador</dt><dd>Agenda a busca de um parceiro sem abrir o cadastro dele.</dd></div>
-                            <div><dt>Finder › Configuração › Regras</dt><dd>Regras que abrem requisição automaticamente.</dd></div>
-                        </dl>
-                    </div>
-                    <div>
-                        <p class="facts-label">Colunas da lista de processos</p>
-                        <dl class="facts">
-                            <div><dt>SD Nº</dt><dd>Número da solicitação na CETESB</dd></div>
-                            <div><dt>Nº Processo</dt><dd>Por exemplo, CETESB.063501/2026-34</dd></div>
-                            <div><dt>Objeto da Solicitação</dt><dd>O que foi pedido: Parecer Técnico, Certificado de Movimentação de Resíduos, e assim por diante</dd></div>
-                            <div><dt>Nº Documento</dt><dd>Link para a página de autenticidade na CETESB</dd></div>
-                            <div><dt>Desde</dt><dd>Data da situação atual, em geral a de emissão do documento</dd></div>
-                            <div><dt>Situação</dt><dd>Veja a legenda abaixo</dd></div>
-                        </dl>
-                    </div>
-                    <div class="prose">
-                        <p>Ao abrir uma solicitação, duas abas mostram o <strong>Documento PDF</strong> emitido pela CETESB, para ler na própria tela, e o <strong>Conteúdo Extraído</strong>, o texto do PDF. É nesse texto que as regras procuram palavras.</p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="row">
-            <div class="wrap">
-                <div class="rail">
-                    <h2>Situação de cada solicitação</h2>
-                    <p>A cor da situação na lista de processos.</p>
-                </div>
-                <div>
-                    <ul class="legend">
-                        <li><span class="sw sw--green"></span><strong>Verde</strong><span>Emitida, Deferido, LO Parcial Emitida</span></li>
-                        <li><span class="sw sw--yellow"></span><strong>Amarelo</strong><span>Em Análise</span></li>
-                        <li><span class="sw sw--red"></span><strong>Vermelho</strong><span>Negada, Indeferido</span></li>
-                        <li><span class="sw sw--blue"></span><strong>Azul</strong><span>Atendida</span></li>
-                        <li><span class="sw sw--gray"></span><strong>Cinza</strong><span>Arquivada</span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="row">
-            <div class="wrap">
-                <div class="rail">
-                    <h2>Acompanhando as buscas</h2>
-                    <p>Cada busca pedida vira um job, do mais recente para o mais antigo.</p>
-                </div>
-                <div>
-                    <table class="rules">
-                        <caption class="sr-only">Situações de uma busca</caption>
-                        <tbody>
-                            <tr><th scope="row">Pendente</th><td>Na fila, aguardando a próxima execução da rotina.</td></tr>
-                            <tr><th scope="row">Executando</th><td>Consultando a CETESB neste momento. Enquanto isso, não dá para pedir outra busca para o mesmo parceiro.</td></tr>
-                            <tr><th scope="row">Concluído</th><td>Terminou. A coluna Resultado mostra quantos processos foram criados, atualizados ou deram erro.</td></tr>
-                            <tr><th scope="row">Erro</th><td>Não foi possível concluir. O motivo aparece nos detalhes e o botão <strong>Reprocessar</strong> devolve o job para a fila.</td></tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </section>
@@ -133,42 +94,22 @@
             <div class="wrap">
                 <div class="rail">
                     <h2>Uma regra abre a requisição sozinha</h2>
-                    <p>A regra casa quando todos os filtros preenchidos são atendidos. Filtro em branco vale para qualquer valor.</p>
+                    <p>Você escolhe o que merece atenção e o que deve virar demanda.</p>
                 </div>
                 <div>
                     <div class="stack">
+                    <div class="prose">
+                        <p>Você define o que importa: o tipo de documento, a situação do processo, as palavras que aparecem no texto e quem recebe a requisição. Um exemplo:</p>
+                    </div>
                     <div>
                         <p class="facts-label">Exemplo de regra</p>
                         <dl class="facts">
                             <div><dt>Tipo</dt><dd>Parecer Técnico</dd></div>
                             <div><dt>Situação</dt><dd>Deferido</dd></div>
-                            <div><dt>Palavra no PDF</dt><dd>perigoso, perigosa</dd></div>
+                            <div><dt>Palavra no documento</dt><dd>perigoso, perigosa</dd></div>
                             <div><dt>Resultado</dt><dd>Requisição aberta no departamento Técnico, com trecho do documento na descrição</dd></div>
                         </dl>
                     </div>
-                    <table class="rules">
-                        <caption class="sr-only">Filtros e resultado de uma regra</caption>
-                        <tbody>
-                            <tr><th scope="row">Tipo de documento</th><td>Licença de Operação, CADRI, Parecer Técnico, Auto de Infração e os demais tipos da CETESB.</td></tr>
-                            <tr><th scope="row">Situação do processo</th><td>Deferido, Indeferido, Emitida, Em Análise e as outras situações do portal.</td></tr>
-                            <tr><th scope="row">Palavras no PDF</th><td>A regra só dispara se o texto do documento contiver uma das palavras, separadas por vírgula.</td></tr>
-                            <tr><th scope="row">Requisição criada</th><td>Departamento, categoria e prazo definidos na regra, com a descrição montada a partir do processo.</td></tr>
-                        </tbody>
-                    </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="row">
-            <div class="wrap">
-                <div class="rail">
-                    <h2>Atualização diária</h2>
-                </div>
-                <div>
-                    <div class="prose">
-                        <p>Todo dia, o Finder consulta de novo cada processo <em>Em Análise</em>. Quando a CETESB decide, a situação muda sozinha, os campos que estavam vazios são preenchidos, o PDF é baixado e as regras rodam.</p>
-                        <p>Documentos que ainda não tinham PDF são tentados de novo nessa mesma rodada. O Finder entende os dois sistemas de documento da CETESB, o antigo e o e-CETESB.</p>
-                        <p>Buscar de novo é seguro: as solicitações são identificadas pelo número, então uma nova busca não duplica nada.</p>
                     </div>
                 </div>
             </div>
@@ -186,8 +127,8 @@
                             <tr><th scope="row">Nenhuma consulta manual</th><td>A busca por CNPJ, a atualização diária e o download do PDF acontecem sozinhos.</td></tr>
                             <tr><th scope="row">O documento fica com você</th><td>O PDF e o texto extraído ficam guardados e pesquisáveis.</td></tr>
                             <tr><th scope="row">Regras definidas por você</th><td>Você escolhe o tipo de documento, a situação, as palavras que importam e o departamento que recebe a requisição.</td></tr>
-                            <tr><th scope="row">Entende os dois sistemas da CETESB</th><td>Documentos do sistema antigo e do e-CETESB são baixados do lugar certo, sem você escolher.</td></tr>
-                            <tr><th scope="row">Buscar de novo é seguro</th><td>As solicitações são identificadas pelo número, então nada duplica.</td></tr>
+                            <tr><th scope="row">Funciona com qualquer documento da CETESB</th><td>Antigo ou novo, o sistema encontra o PDF onde ele estiver.</td></tr>
+                            <tr><th scope="row">Buscar de novo é seguro</th><td>Nada duplica: uma nova busca traz só o que é novo e atualiza o que mudou.</td></tr>
                         </tbody>
                     </table>
                 </div>

@@ -54,7 +54,7 @@
                         <tbody>
                         <tr>
                             <td data-label="Sem o sistema">Limite de emissão da LO conferido em planilha ou de cabeça.</td>
-                            <td data-label="Com o sistema">Cada componente (CO, NOx, SO2, HCl e os da sua licença) é comparado com o limite cadastrado a cada leitura do CLP, com limiar de atenção, por exemplo 90%.</td>
+                            <td data-label="Com o sistema">Cada componente da sua licença é comparado com o limite a cada leitura do CLP, e o sistema avisa antes de chegar nele.</td>
                         </tr>
                         <tr>
                             <td data-label="Sem o sistema">CADRI vencido ou sem saldo descoberto na hora da queima.</td>
@@ -70,7 +70,7 @@
                         </tr>
                         <tr>
                             <td data-label="Sem o sistema">Parada do forno sem registro no sistema.</td>
-                            <td data-label="Com o sistema">O intertravamento do CLP vira alerta de parada e pausa o plano.</td>
+                            <td data-label="Com o sistema">A parada do forno vira alerta e pausa o plano.</td>
                         </tr>
                         <tr>
                             <td data-label="Sem o sistema">Retomada da queima sem registro de quem autorizou.</td>
@@ -92,13 +92,12 @@
         <section class="row">
             <div class="wrap">
                 <div class="rail">
-                    <h2>Leitura do CLP e painel do turno</h2>
+                    <h2>O que você acompanha</h2>
                 </div>
                 <div>
                     <div class="prose">
-                        <p>O CLP do incinerador envia alimentação, temperaturas, intertravamento e emissões a cada leitura, em torno de 20 segundos, por API com chave própria do equipamento.</p>
-                        <p>O painel do turno mostra a taxa total contra o limite, a última leitura, a tabela de componentes contra a LO e os alertas ativos. A parada de emergência é um botão do próprio painel.</p>
-                        <p>Os alertas têm três níveis: atenção, crítico e parada. Cada um registra o gatilho, o componente e o horário. Encarregados reconhecem os de atenção e os críticos, e o alerta de parada pausa o plano até a retomada autorizada.</p>
+                        <p>Durante a queima, você acompanha em tempo real a taxa de alimentação, as temperaturas e cada emissão contra o limite da licença. Quando algo chega perto do limite, o alerta aparece na hora, com o componente e o horário. Se passar, a queima é pausada e há um botão de parada de emergência na própria tela.</p>
+                        <p>Cada pessoa vê e faz só o que cabe ao seu cargo, do operador à gerência. O equipamento tem um acesso próprio, que só envia leituras.</p>
                     </div>
                 </div>
             </div>
@@ -111,32 +110,12 @@
                 </div>
                 <div>
                     <ol class="vsteps">
-                        <li><div><strong>Libere o resíduo</strong><p>A área administrativa registra embalagens e pesagem e libera o resíduo contra um CADRI válido e com saldo.</p></div></li>
-                        <li><div><strong>Abra o turno</strong><p>O encarregado abre o turno A, B ou C com a equipe.</p></div></li>
+                        <li><div><strong>Libere o resíduo</strong><p>A área administrativa libera o resíduo contra um CADRI válido e com saldo.</p></div></li>
+                        <li><div><strong>Abra o turno</strong><p>O encarregado abre o turno com a equipe.</p></div></li>
                         <li><div><strong>Monte o plano</strong><p>Resíduos, embalagens por hora e taxa de alimentação, aprovados dentro do limite.</p></div></li>
                         <li><div><strong>Queime</strong><p>O CLP alimenta o painel e o sistema cuida dos alertas.</p></div></li>
                         <li><div><strong>Feche e valide</strong><p>O relatório diário sai do turno com o que foi queimado de cada resíduo, inclusive queimas parciais em vários turnos. A validação baixa o estoque.</p></div></li>
                     </ol>
-                </div>
-            </div>
-        </section>
-        <section class="row">
-            <div class="wrap">
-                <div class="rail">
-                    <h2>Quem acessa o quê</h2>
-                    <p>Cinco perfis, cada um com o seu alcance.</p>
-                </div>
-                <div>
-                    <table class="rules">
-                        <caption class="sr-only">Perfis de acesso</caption>
-                        <tbody>
-                            <tr><th scope="row">Operador de queima</th><td>Acompanha turnos, planos, leituras e alertas, e registra leituras manuais.</td></tr>
-                            <tr><th scope="row">Encarregado</th><td>Abre turnos, monta e aprova planos, reconhece alertas e emite relatórios.</td></tr>
-                            <tr><th scope="row">Área administrativa</th><td>Cria e aprova as liberações para queima.</td></tr>
-                            <tr><th scope="row">Gerência técnica</th><td>Configura os limites da LO e autoriza a retomada depois de uma parada.</td></tr>
-                            <tr><th scope="row">Integração CLP</th><td>Usuário só do equipamento: envia leituras e nada mais.</td></tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </section>
