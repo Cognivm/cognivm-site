@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partner API: cadastro de empresas pela Receita no Odoo | COGNIVM</title>
-    <meta name="description" content="Busque empresas por CNAE, região, porte e capital social e cadastre no Odoo com os dados da Receita Federal.">
+    <title>Partner API: cadastro de empresas pela Receita | COGNIVM</title>
+    <meta name="description" content="Busque empresas por CNAE, região, porte e capital social e cadastre com os dados da Receita Federal.">
     <link rel="stylesheet" href="site.css">
 </head>
 <body>
@@ -27,13 +27,13 @@
         <section class="hero">
             <div class="wrap">
                 <h1>Partner API: cadastre empresas <mark>sem digitar</mark>, direto da Receita</h1>
-                <p class="lead">Busque por CNPJ, por nome ou por filtros de atividade e região. A empresa entra no Odoo com endereço, CNAEs e sócios, sem duplicar.</p>
+                <p class="lead">Busque por CNPJ, por nome ou por filtros de atividade e região. A empresa entra no cadastro com endereço, CNAEs e sócios, sem duplicar.</p>
                 <div class="actions">
                     <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
                     <a href="#como-funciona" class="link-ink">Ver como funciona</a>
                 </div>
                 <dl class="ficha">
-                    <div><dt>O que é</dt><dd>Conexão do Odoo com a base de CNPJ da Receita Federal. Busca empresas e cria o parceiro com identificação, endereço, atividade, porte e sócios.</dd></div>
+                    <div><dt>O que é</dt><dd>Conexão com a base de CNPJ da Receita Federal. Busca empresas e cria o parceiro com identificação, endereço, atividade, porte e sócios.</dd></div>
                     <div><dt>Para quem</dt><dd>Comercial, cadastro e fiscal, e quem alimenta a Gestão de Resíduos e o Finder, que partem do CNPJ.</dd></div>
                     <div><dt>O que muda</dt><dd>O cadastro deixa de ser digitado. Cada empresa entra uma vez, atualizada, com os sócios como contatos.</dd></div>
                 </dl>
@@ -58,7 +58,7 @@
                         </tr>
                         <tr>
                             <td data-label="Sem o sistema">Endereço e CNAE com erro de digitação.</td>
-                            <td data-label="Com o sistema">Os dados vêm da base da Receita, e o município é ligado ao cadastro de cidades do Odoo.</td>
+                            <td data-label="Com o sistema">Os dados vêm da base da Receita, e o município é ligado ao cadastro de cidades do sistema.</td>
                         </tr>
                         <tr>
                             <td data-label="Sem o sistema">O mesmo parceiro cadastrado duas vezes.</td>
@@ -81,12 +81,12 @@
             <div class="wrap">
                 <div class="rail">
                     <h2>Como funciona</h2>
-                    <p>Do primeiro acesso à lista de empresas no Odoo.</p>
+                    <p>Do primeiro acesso à lista de empresas cadastradas.</p>
                 </div>
                 <div>
                     <ol class="vsteps">
                         <li><div><strong>Configure a conexão</strong><p>Em Partner API, crie a configuração com nome, endereço da API, usuário e senha. Clique em <strong>Test Connection</strong> e em <strong>Authenticate</strong>.</p></div></li>
-                        <li><div><strong>Sincronize os municípios</strong><p><strong>Sincronizar Municípios</strong> liga a cidade da Receita à cidade do Odoo, para o endereço chegar certo.</p></div></li>
+                        <li><div><strong>Sincronize os municípios</strong><p><strong>Sincronizar Municípios</strong> liga a cidade da Receita à cidade do cadastro, para o endereço chegar certo.</p></div></li>
                         <li><div><strong>Escolha como buscar</strong><p>Por filtros, por nome ou pelo próprio cadastro do parceiro. Veja as três formas abaixo.</p></div></li>
                         <li><div><strong>Traga as empresas</strong><p><strong>Sync Partners</strong> importa o resultado dos filtros. <strong>Buscar por Nome</strong> importa o que a busca encontrou.</p></div></li>
                         <li><div><strong>Acompanhe o consumo</strong><p>A configuração mostra os créditos que restam, quantas consultas já foram feitas e a data da última sincronização.</p></div></li>
@@ -155,6 +155,26 @@
         <section class="row">
             <div class="wrap">
                 <div class="rail">
+                    <h2>Por que a Cognivm</h2>
+                    <p>O que nos diferencia, com o que o sistema faz de fato.</p>
+                </div>
+                <div>
+                    <table class="rules">
+                        <caption class="sr-only">Por que a Cognivm</caption>
+                        <tbody>
+                            <tr><th scope="row">Dados da base da Receita</th><td>Identificação, endereço, atividade, porte e capital social chegam prontos.</td></tr>
+                            <tr><th scope="row">Sem parceiro duplicado</th><td>O sistema procura o CNPJ antes de criar e atualiza quem já existe.</td></tr>
+                            <tr><th scope="row">Sócios como contatos</th><td>Cada sócio vira um contato ligado à empresa, com CPF quando disponível.</td></tr>
+                            <tr><th scope="row">Filtros que se combinam</th><td>Atividade, região, porte, capital social, situação e data de início, na mesma busca.</td></tr>
+                            <tr><th scope="row">Entrada para os outros produtos</th><td>CNPJ e cidade corretos alimentam o <a href="finder.html">Finder</a> e os <a href="documentos.html">Documentos</a>.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
                     <h2>Veja em vídeo</h2>
                     <p>Apresentação gravada do módulo.</p>
                 </div>
@@ -172,7 +192,7 @@
             <div class="wrap">
                 <div>
                     <h2>Mostramos uma busca com os filtros do seu setor e da sua região</h2>
-                    <p>A demonstração termina com as empresas já cadastradas no Odoo.</p>
+                    <p>A demonstração termina com as empresas já cadastradas.</p>
                 </div>
                 <div>
                     <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Partner%20API" class="btn-primary">Pedir demonstração por e-mail</a>
