@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Empresas | COGNIVM</title>
+    <meta name="description" content="Busque empresas por CNAE, região, porte e capital social e cadastre no Odoo com os dados da Receita Federal.">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header class="site-nav">
+        <div class="wrap">
+            <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+            <ul>
+                <li class="hide-md"><a href="residuos.html">Resíduos</a></li>
+                <li class="hide-md"><a href="controle-de-queima.html">Controle de Queima</a></li>
+                <li class="hide-md"><a href="licenciamento.html">Licenciamento</a></li>
+                <li class="hide-md"><a href="empresas.html" aria-current="page">Base de Empresas</a></li>
+                <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="mailto:sac@cognivm.com.br" class="nav-contact">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div>
+                    <h1>Cadastro de empresas com os dados da Receita Federal</h1>
+                    <p class="lead">Encontre empresas por atividade, cidade, porte ou capital social e traga para o Odoo com endereço, CNAEs e sócios. Sem digitar e sem duplicar quem já está cadastrado.</p>
+                    <div class="actions">
+                        <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Base%20de%20Empresas" class="btn-primary">Agendar demonstração</a>
+                        <a href="#busca" class="text-link">Ver as formas de busca</a>
+                    </div>
+                </div>
+                <ul class="coverage" aria-label="Filtros de busca">
+                    <li><span class="uf">CNAE</span><span><strong>Atividade principal</strong> <small>e secundárias</small></span></li>
+                    <li><span class="uf">UF</span><span><strong>Estado e município</strong> <small></small></span></li>
+                    <li><span class="uf">R$</span><span><strong>Capital social</strong> <small>mínimo e máximo</small></span></li>
+                    <li><span class="uf">ME</span><span><strong>Porte da empresa</strong> <small>ME, EPP e demais</small></span></li>
+                    <li><span class="uf">SIT</span><span><strong>Situação cadastral</strong> <small>e data de abertura</small></span></li>
+                    <li><span class="uf">SN</span><span><strong>Simples e MEI</strong> <small></small></span></li>
+                </ul>
+            </div>
+        </section>
+        <section class="section" id="busca">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Três formas de buscar</h2>
+                </div>
+                <div class="docs">
+                    <article class="doc doc-lead">
+                        <h3>Por filtros</h3>
+                        <p class="doc-name">Para prospectar uma região ou um setor</p>
+                        <ul>
+                            <li>Combine CNAE principal e secundários, estado, município, porte, capital social, situação cadastral e data de abertura.</li>
+                            <li>Todas as empresas encontradas entram como parceiros, prontas para o comercial.</li>
+                            <li>Útil para achar, por exemplo, as indústrias de um setor que geram resíduos na sua região.</li>
+                        </ul>
+                    </article>
+                    <article class="doc">
+                        <h3>Por nome</h3>
+                        <p class="doc-name">Quando só se sabe a razão social</p>
+                        <ul>
+                            <li>Busca por parte do nome, com filtro opcional de estado.</li>
+                            <li>Cada resultado entra com os dados completos do CNPJ.</li>
+                        </ul>
+                    </article>
+                    <article class="doc">
+                        <h3>Pelo próprio cadastro</h3>
+                        <p class="doc-name">Para quem já é cliente</p>
+                        <ul>
+                            <li>Um botão no parceiro atualiza os dados a partir do CNPJ.</li>
+                            <li>Outro traz também os sócios como contatos.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section band">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>O que entra no cadastro</h2>
+                    <p>Os campos vêm direto da base pública de CNPJ e ficam no parceiro do Odoo.</p>
+                </div>
+                <table class="rules">
+                    <caption class="sr-only">Campos importados</caption>
+                    <tbody>
+                        <tr><th scope="row">Identificação</th><td>Razão social, nome fantasia, CNPJ e raiz do CNPJ.</td></tr>
+                        <tr><th scope="row">Endereço</th><td>Logradouro, número, complemento, bairro, CEP e município ligado ao cadastro de cidades do Odoo.</td></tr>
+                        <tr><th scope="row">Atividade</th><td>CNAE principal e CNAEs secundários.</td></tr>
+                        <tr><th scope="row">Situação</th><td>Situação cadastral, data de início de atividade, porte e capital social.</td></tr>
+                        <tr><th scope="row">Contato</th><td>Telefones e e-mail registrados na Receita.</td></tr>
+                        <tr><th scope="row">Sócios</th><td>Cada sócio vira um contato ligado à empresa, com CPF quando disponível.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Por que usar</h2>
+                </div>
+                <ul class="details">
+                    <li>
+                        <strong>Nada digitado à mão</strong>
+                        <p>Endereço, CNAE e situação cadastral chegam prontos, sem erro de digitação.</p>
+                    </li>
+                    <li>
+                        <strong>Sem parceiro duplicado</strong>
+                        <p>Antes de criar, o sistema procura o CNPJ. Se a empresa já existe, ela é atualizada.</p>
+                    </li>
+                    <li>
+                        <strong>Prospecção com critério</strong>
+                        <p>Filtrar por atividade e região entrega uma lista de empresas que fazem sentido para o seu negócio.</p>
+                    </li>
+                    <li>
+                        <strong>Base pronta para os outros módulos</strong>
+                        <p>CNPJ e cidade corretos são o que a Gestão de Resíduos e o Licenciamento CETESB usam para buscar unidades e licenças.</p>
+                    </li>
+                    <li>
+                        <strong>Consumo sob controle</strong>
+                        <p>A configuração mostra os créditos disponíveis e quantas consultas já foram feitas.</p>
+                    </li>
+                    <li>
+                        <strong>Dados sempre atualizáveis</strong>
+                        <p>A data da última sincronização fica no parceiro, e uma nova consulta atualiza tudo.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="wrap">
+                <div>
+                    <h2>Quer montar sua base de clientes?</h2>
+                    <p>Mostramos uma busca com os filtros do seu setor e da sua região.</p>
+                </div>
+                <div class="actions">
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Base%20de%20Empresas" class="btn-primary">Agendar demonstração</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>Dúvidas ou suporte: <a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></span>
+            <span>&copy; 2026 COGNIVM</span>
+        </div>
+    </footer>
+</body>
+</html>

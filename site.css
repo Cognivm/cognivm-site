@@ -75,7 +75,8 @@ a:focus-visible, button:focus-visible {
     text-decoration: none;
 }
 .wordmark span { color: var(--color-accent); }
-.site-nav ul { display: flex; gap: 32px; list-style: none; align-items: center; }
+.site-nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
+.site-nav ul a[aria-current="page"] { color: var(--color-fg); font-weight: 600; }
 .site-nav ul a {
     color: var(--color-muted);
     text-decoration: none;
@@ -85,6 +86,7 @@ a:focus-visible, button:focus-visible {
 }
 .site-nav ul a:hover { color: var(--color-fg); }
 .site-nav ul a.nav-contact { color: var(--color-accent); font-weight: 600; }
+.site-nav .show-md { display: none; }
 .site-nav button.link {
     background: none;
     border: 0;
@@ -197,7 +199,7 @@ a:focus-visible, button:focus-visible {
 .steps {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 32px;
     counter-reset: step;
 }
@@ -236,6 +238,31 @@ a:focus-visible, button:focus-visible {
 }
 .contact p { color: var(--color-muted); margin-top: 12px; max-width: 52ch; }
 .contact .actions { justify-self: start; }
+
+/* Os três documentos: destaque logo após o hero */
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid var(--color-fg);
+}
+.pillar { padding: 32px 32px 32px 0; }
+.pillar + .pillar { padding-left: 32px; border-left: 1px solid var(--color-border); }
+.pillar .acronym {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+.pillar .full { color: var(--color-muted); margin: 8px 0 16px; }
+.pillar .reach { font-weight: 600; color: var(--color-accent); margin-bottom: 8px; }
+.pillar p { max-width: 40ch; }
+
+/* Tabela simples de duas colunas (situação → reação) */
+.rules { width: 100%; border-collapse: collapse; border-top: 2px solid var(--color-fg); }
+.rules th, .rules td { text-align: left; vertical-align: top; padding: 16px 24px 16px 0; border-bottom: 1px solid var(--color-border); }
+.rules th { width: 38%; font-weight: 600; }
+.rules td { color: var(--color-muted); }
 
 /* Home: lista de produtos */
 .products { list-style: none; border-top: 2px solid var(--color-fg); }
@@ -284,8 +311,13 @@ a:focus-visible, button:focus-visible {
 /* ── Responsivo ── */
 @media (max-width: 960px) {
     .hero .wrap, .docs, .contact .wrap, .products > li { grid-template-columns: 1fr; gap: 32px; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar, .pillar + .pillar { padding: 24px 0; border-left: 0; border-bottom: 1px solid var(--color-border); }
+    .rules th { width: auto; display: block; padding-bottom: 4px; border-bottom: 0; }
+    .rules td { display: block; padding-top: 0; }
+    .site-nav ul .hide-md { display: none; }
+    .site-nav ul .show-md { display: list-item; }
     .doc-lead { grid-row: auto; }
-    .steps { grid-template-columns: 1fr 1fr; }
     .agencies { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
@@ -295,4 +327,13 @@ a:focus-visible, button:focus-visible {
     .site-nav ul { gap: 16px; }
     .site-nav ul .hide-sm { display: none; }
     .steps, .details, .agencies { grid-template-columns: 1fr; }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
 }

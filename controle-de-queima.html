@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Queima | COGNIVM</title>
+    <meta name="description" content="Controle do processo de incineração no Odoo: limites da LO, CADRI, leitura do CLP, alertas e relatório diário.">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header class="site-nav">
+        <div class="wrap">
+            <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+            <ul>
+                <li class="hide-md"><a href="residuos.html">Resíduos</a></li>
+                <li class="hide-md"><a href="controle-de-queima.html" aria-current="page">Controle de Queima</a></li>
+                <li class="hide-md"><a href="licenciamento.html">Licenciamento</a></li>
+                <li class="hide-md"><a href="empresas.html">Base de Empresas</a></li>
+                <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="mailto:sac@cognivm.com.br" class="nav-contact">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div>
+                    <h1>Controle de queima dentro dos limites da sua Licença de Operação</h1>
+                    <p class="lead">Do resíduo liberado ao relatório do turno, com leitura do CLP do incinerador, alertas por componente e parada automática quando um limite é ultrapassado.</p>
+                    <div class="actions">
+                        <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Controle%20de%20Queima" class="btn-primary">Agendar demonstração</a>
+                        <a href="#bloqueios" class="text-link">Ver o que o sistema bloqueia</a>
+                    </div>
+                </div>
+                <ul class="coverage" aria-label="Caminho do resíduo na queima">
+                    <li><span class="uf">1</span><span><strong>MTR</strong> <small>resíduo entra no estoque</small></span></li>
+                    <li><span class="uf">2</span><span><strong>Liberação</strong> <small>CADRI válido e com saldo</small></span></li>
+                    <li><span class="uf">3</span><span><strong>Turno</strong> <small>A, B ou C, com encarregado</small></span></li>
+                    <li><span class="uf">4</span><span><strong>Plano de queima</strong> <small>taxas de alimentação aprovadas</small></span></li>
+                    <li><span class="uf">5</span><span><strong>Queima</strong> <small>leituras do CLP e alertas</small></span></li>
+                    <li><span class="uf">6</span><span><strong>Relatório diário</strong> <small>validado pela supervisão</small></span></li>
+                    <li><span class="uf">7</span><span><strong>Baixa de estoque</strong> <small>automática</small></span></li>
+                </ul>
+            </div>
+        </section>
+        <section class="section" id="bloqueios">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>O que o sistema bloqueia</h2>
+                    <p>As regras da licença viram travas do sistema, não um lembrete no procedimento.</p>
+                </div>
+                <table class="rules">
+                    <caption class="sr-only">Situações bloqueadas pelo sistema</caption>
+                    <tbody>
+                        <tr><th scope="row">CADRI vencido ou sem saldo</th><td>A liberação do resíduo é impedida. Se o CADRI vencer entre a liberação e a aprovação, o plano também não é aprovado, e a mensagem lista os resíduos afetados.</td></tr>
+                        <tr><th scope="row">Taxa planejada acima do limite da LO</th><td>O plano de queima não é aprovado até as taxas de alimentação ficarem dentro do limite.</td></tr>
+                        <tr><th scope="row">CLP reporta alimentação acima do limite</th><td>O sistema registra um alerta de parada e pausa o plano em andamento.</td></tr>
+                        <tr><th scope="row">Emissão de um componente acima do limite</th><td>Alerta de parada com o nome do componente, e o plano é pausado.</td></tr>
+                        <tr><th scope="row">Intertravamento do forno</th><td>O sinal do CLP vira alerta de parada e o plano é pausado.</td></tr>
+                        <tr><th scope="row">Retomada depois de uma parada</th><td>Só com autorização da gerência e justificativa registrada.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Monitoramento durante a queima</h2>
+                </div>
+                <div class="docs">
+                    <article class="doc doc-lead">
+                        <h3>Leituras do CLP</h3>
+                        <p class="doc-name">Integração por API com chave própria</p>
+                        <ul>
+                            <li>O CLP envia alimentação, temperaturas, intertravamento e emissões a cada leitura, em torno de 20 segundos.</li>
+                            <li>Cada componente (CO, NOx, SO2, HCl e os demais da sua licença) é comparado com o limite cadastrado da LO.</li>
+                            <li>Limiar de atenção configurável por componente, por exemplo 90% do limite.</li>
+                            <li>Painel do turno com a taxa total contra o limite, a última leitura, a tabela de componentes e os alertas ativos.</li>
+                            <li>Botão de parada de emergência no próprio painel.</li>
+                        </ul>
+                    </article>
+                    <article class="doc">
+                        <h3>Alertas</h3>
+                        <p class="doc-name">Atenção, crítico e parada</p>
+                        <ul>
+                            <li>Cada alerta registra o gatilho, o componente e o horário.</li>
+                            <li>Encarregados reconhecem os alertas de atenção e críticos.</li>
+                            <li>Alerta de parada pausa o plano até a retomada autorizada.</li>
+                        </ul>
+                    </article>
+                    <article class="doc">
+                        <h3>Relatório diário</h3>
+                        <p class="doc-name">Fechamento do turno</p>
+                        <ul>
+                            <li>Gerado ao fechar o turno, com o que foi queimado de cada resíduo.</li>
+                            <li>Queima parcial em vários turnos, com o saldo acompanhado.</li>
+                            <li>A validação dá baixa no estoque automaticamente.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section band">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Um turno de operação</h2>
+                    <p>Do jeito que a equipe trabalha no chão da fábrica.</p>
+                </div>
+                <ol class="steps">
+                    <li><strong>Libere o resíduo</strong><p>A área administrativa registra embalagens e pesagem e libera o resíduo contra um CADRI válido e com saldo.</p></li>
+                    <li><strong>Abra o turno</strong><p>O encarregado abre o turno A, B ou C com a equipe.</p></li>
+                    <li><strong>Monte o plano</strong><p>Resíduos, embalagens por hora e taxa de alimentação, aprovados dentro do limite.</p></li>
+                    <li><strong>Queime</strong><p>O CLP alimenta o painel e o sistema cuida dos alertas.</p></li>
+                    <li><strong>Feche e valide</strong><p>O relatório diário sai do turno e a validação baixa o estoque.</p></li>
+                </ol>
+            </div>
+        </section>
+        <section class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Cada um com o seu acesso</h2>
+                </div>
+                <table class="rules">
+                    <caption class="sr-only">Perfis de acesso</caption>
+                    <tbody>
+                        <tr><th scope="row">Operador de queima</th><td>Acompanha turnos, planos, leituras e alertas, e registra leituras manuais.</td></tr>
+                        <tr><th scope="row">Encarregado</th><td>Abre turnos, monta e aprova planos, reconhece alertas e emite relatórios.</td></tr>
+                        <tr><th scope="row">Área administrativa</th><td>Cria e aprova as liberações para queima.</td></tr>
+                        <tr><th scope="row">Gerência técnica</th><td>Configura os limites da LO e autoriza a retomada depois de uma parada.</td></tr>
+                        <tr><th scope="row">Integração CLP</th><td>Usuário só do equipamento: envia leituras e nada mais.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="wrap">
+                <div>
+                    <h2>Opera um incinerador?</h2>
+                    <p>Mostramos o controle de queima com os limites da sua licença e a integração com o seu CLP.</p>
+                </div>
+                <div class="actions">
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Controle%20de%20Queima" class="btn-primary">Agendar demonstração</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>Dúvidas ou suporte: <a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></span>
+            <span>&copy; 2026 COGNIVM</span>
+        </div>
+    </footer>
+</body>
+</html>

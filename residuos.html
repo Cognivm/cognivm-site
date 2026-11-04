@@ -12,8 +12,11 @@
         <div class="wrap">
             <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
             <ul>
-                <li><a href="#plataformas">Plataformas</a></li>
-                <li class="hide-sm"><a href="#documentos">Documentos</a></li>
+                <li class="hide-md"><a href="residuos.html" aria-current="page">Resíduos</a></li>
+                <li class="hide-md"><a href="controle-de-queima.html">Controle de Queima</a></li>
+                <li class="hide-md"><a href="licenciamento.html">Licenciamento</a></li>
+                <li class="hide-md"><a href="empresas.html">Base de Empresas</a></li>
+                <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
                 <li><a href="mailto:sac@cognivm.com.br" class="nav-contact">Contato</a></li>
             </ul>
         </div>
@@ -23,11 +26,11 @@
         <section class="hero">
             <div class="wrap">
                 <div>
-                    <h1>MTR, CDF e DMR de sete órgãos ambientais num só ERP</h1>
-                    <p class="lead">Emita, receba e declare resíduos no SINIR e nos sistemas de SP, SC, RJ, MG, ES e RS sem abrir o portal de cada órgão. Tudo dentro do Odoo, ligado ao estoque.</p>
+                    <h1>MTR, CDF e DMR em todos os estados que atendemos, num só ERP</h1>
+                    <p class="lead">Os três documentos que todo órgão ambiental exige, funcionando no SINIR e nos sistemas de SP, SC, RJ, MG, ES e RS. Sem abrir o portal de cada órgão, e ligados ao estoque do Odoo.</p>
                     <div class="actions">
                         <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Gest%C3%A3o%20de%20Res%C3%ADduos" class="btn-primary">Agendar demonstração</a>
-                        <a href="#plataformas" class="text-link">Ver o que cada estado oferece</a>
+                        <a href="#plataformas" class="text-link">Ver o detalhe por estado</a>
                     </div>
                 </div>
                 <ul class="coverage" aria-label="Órgãos integrados">
@@ -41,12 +44,39 @@
                 </ul>
             </div>
         </section>
-
+        <section class="section" id="documentos">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Os três documentos de qualquer plataforma</h2>
+                    <p>MTR, CDF e DMR são a base de todos os sistemas de resíduos do país. O ERP cobre os três em cada um dos sete órgãos.</p>
+                </div>
+                <div class="pillars">
+                    <article class="pillar">
+                        <div class="acronym">MTR</div>
+                        <p class="full">Manifesto de Transporte de Resíduos</p>
+                        <p class="reach">Nas 7 plataformas</p>
+                        <p>Emitido pelo ERP ou trazido do portal do estado, sempre com recebimento pelo destinador e alteração validada pelo gerador.</p>
+                    </article>
+                    <article class="pillar">
+                        <div class="acronym">CDF</div>
+                        <p class="full">Certificado de Destinação Final</p>
+                        <p class="reach">Nas 7 plataformas</p>
+                        <p>Emitido a partir dos manifestos recebidos no período, com baixa automática do estoque.</p>
+                    </article>
+                    <article class="pillar">
+                        <div class="acronym">DMR</div>
+                        <p class="full">Declaração de Movimentação de Resíduos</p>
+                        <p class="reach">Nas 7 plataformas</p>
+                        <p>Montada com a movimentação registrada e enviada ao órgão no período que cada estado exige.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
         <section class="section" id="plataformas">
             <div class="wrap">
                 <div class="section-head">
-                    <h2>O que funciona em cada plataforma</h2>
-                    <p>Cada órgão libera recursos diferentes no seu sistema. A tabela mostra o que o ERP faz hoje em cada um.</p>
+                    <h2>O detalhe em cada plataforma</h2>
+                    <p>O que muda de um estado para outro é a forma: período da declaração, recursos extras e se o órgão permite emitir o manifesto por integração.</p>
                 </div>
                 <div class="table-scroll">
                     <table class="matrix">
@@ -63,7 +93,7 @@
                         <tbody>
                             <tr>
                                 <th scope="row">SINIR <small>Nacional, IBAMA</small></th>
-                                <td class="yes">Emite e cancela</td>
+                                <td class="yes">Emite, cancela e recebe</td>
                                 <td>Com alteração</td>
                                 <td>Emite</td>
                                 <td>Emite e envia</td>
@@ -71,7 +101,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">SIGOR <small>São Paulo, CETESB</small></th>
-                                <td class="yes">Emite e cancela</td>
+                                <td class="yes">Emite, cancela e recebe</td>
                                 <td>Com alteração</td>
                                 <td>Emite</td>
                                 <td>Emite e envia</td>
@@ -79,7 +109,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">IMA <small>Santa Catarina</small></th>
-                                <td class="yes">Emite e cancela</td>
+                                <td class="yes">Emite, cancela e recebe</td>
                                 <td>Com alteração</td>
                                 <td>Emite</td>
                                 <td>Emite e envia</td>
@@ -87,7 +117,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">INEA <small>Rio de Janeiro</small></th>
-                                <td class="alt">Importa do portal</td>
+                                <td>Importa do portal e recebe</td>
                                 <td>Com alteração</td>
                                 <td>Emite</td>
                                 <td>Mensal, emite e envia</td>
@@ -95,7 +125,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">FEAM <small>Minas Gerais</small></th>
-                                <td class="alt">Importa do portal</td>
+                                <td>Importa do portal e recebe</td>
                                 <td>Com alteração</td>
                                 <td>Emite</td>
                                 <td>Emite e envia</td>
@@ -103,7 +133,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">IEMA <small>Espírito Santo</small></th>
-                                <td class="alt">Importa do portal</td>
+                                <td>Importa do portal e recebe</td>
                                 <td>Com alteração</td>
                                 <td>Emite</td>
                                 <td>Trimestral, emite e envia</td>
@@ -111,7 +141,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">FEPAM <small>Rio Grande do Sul</small></th>
-                                <td class="alt">Importa do portal</td>
+                                <td>Importa do portal e recebe</td>
                                 <td>Com alteração</td>
                                 <td>Emite</td>
                                 <td>Trimestral, emite e envia</td>
@@ -120,11 +150,10 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="matrix-note">"Importa do portal": o manifesto é emitido no sistema do estado e o ERP traz os dados completos (resíduos, gerador, transportador e destinador) para receber, certificar e declarar.</p>
+                <p class="matrix-note">Onde o órgão não libera a emissão por integração, o manifesto é emitido no portal do estado e o ERP traz os dados completos (resíduos, gerador, transportador e destinador) para receber, certificar e declarar.</p>
             </div>
         </section>
-
-        <section class="section" id="documentos">
+        <section class="section">
             <div class="wrap">
                 <div class="section-head">
                     <h2>Os três documentos, do começo ao fim</h2>
@@ -135,8 +164,8 @@
                         <p class="doc-name">Manifesto de Transporte de Resíduos</p>
                         <ul>
                             <li>Emissão e cancelamento direto do ERP no SINIR, no SIGOR e no IMA.</li>
-                            <li>Importação dos manifestos já emitidos no portal, com resíduos e todos os envolvidos.</li>
-                            <li>Recebimento pelo destinador com quantidade, tratamento e responsável.</li>
+                            <li>Nos demais estados, os manifestos emitidos no portal entram no ERP com resíduos e todos os envolvidos.</li>
+                            <li>Recebimento pelo destinador com quantidade, tratamento e responsável, em todos os estados.</li>
                             <li>Alteração de recebimento: o destinador propõe a correção e o gerador aceita ou recusa.</li>
                             <li>MTR complementar e recebimento pelo armazenador temporário (SINIR e SIGOR).</li>
                             <li>Aviso diário aos gestores quando um manifesto chega a 60 dias da expedição, com os dias que faltam para vencer.</li>
@@ -163,23 +192,21 @@
                 </div>
             </div>
         </section>
-
         <section class="section band">
             <div class="wrap">
                 <div class="section-head">
                     <h2>Como o resíduo anda pelo sistema</h2>
-                    <p>O mesmo fluxo vale para os sete órgãos. Muda só o que cada portal permite.</p>
+                    <p>O mesmo fluxo vale para os sete órgãos.</p>
                 </div>
                 <ol class="steps">
                     <li><strong>Cadastre o CNPJ</strong><p>O ERP encontra as unidades da empresa em cada plataforma e traz usuários e responsáveis.</p></li>
-                    <li><strong>Gere o MTR</strong><p>Emita pelo ERP ou importe o que já foi emitido no portal do estado.</p></li>
+                    <li><strong>Gere o MTR</strong><p>Emita pelo ERP ou traga o que já foi emitido no portal do estado.</p></li>
                     <li><strong>Receba</strong><p>O destinador confirma quantidade e tratamento. O resíduo entra no estoque.</p></li>
                     <li><strong>Certifique</strong><p>Os MTRs recebidos do período viram o CDF e saem do estoque.</p></li>
                     <li><strong>Declare</strong><p>A DMR sai da movimentação registrada e vai para o órgão.</p></li>
                 </ol>
             </div>
         </section>
-
         <section class="section">
             <div class="wrap">
                 <div class="section-head">
@@ -213,7 +240,6 @@
                 </ul>
             </div>
         </section>
-
         <section class="contact">
             <div class="wrap">
                 <div>
