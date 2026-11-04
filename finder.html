@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finder: licenças da CETESB no Odoo | COGNIVM</title>
+    <meta name="description" content="Acompanhe as solicitações de licença dos seus parceiros na CETESB, com PDFs e requisições abertas por regras.">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header class="site-nav">
+        <div class="wrap">
+            <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+            <ul>
+                <li class="hide-md"><a href="documentos.html">Documentos</a></li>
+                <li class="hide-md"><a href="plataformas.html">Plataformas</a></li>
+                <li class="hide-md"><a href="finder.html" aria-current="page">Finder</a></li>
+                <li class="hide-md"><a href="partner-api.html">Partner API</a></li>
+                <li class="hide-md"><a href="controle-de-queima.html">Controle de Queima</a></li>
+                <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="#contato" class="nav-contact">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <h1>Finder: as licenças da CETESB <mark>chegam ao Odoo sozinhas</mark></h1>
+                <p class="lead">Informe o CNPJ do parceiro. O Finder busca os processos no portal da CETESB, baixa o PDF do documento emitido e abre a requisição interna quando a regra pedir.</p>
+                <div class="actions">
+                    <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
+                    <a href="#como-funciona" class="link-ink">Ver como funciona</a>
+                </div>
+                <dl class="ficha">
+                    <div><dt>O que é</dt><dd>Acompanhamento automático dos processos de licenciamento de uma empresa no portal da CETESB, com situação, PDF e texto do documento, dentro do Odoo.</dd></div>
+                    <div><dt>Para quem</dt><dd>Consultorias ambientais e empresas que acompanham licenças de clientes, fornecedores ou das próprias unidades.</dd></div>
+                    <div><dt>O que muda</dt><dd>Ninguém precisa lembrar de consultar. Quando a decisão sai, o PDF já está no Odoo e, se a regra pedir, a requisição já está aberta.</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="row" id="como-funciona">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Como funciona</h2>
+                    <p>Do clique em Buscar Processos ao parceiro etiquetado.</p>
+                </div>
+                <div>
+                    <ol class="vsteps">
+                        <li><div><strong>Peça a busca no parceiro</strong><p>Abra o parceiro em Contatos e vá na aba <strong>Processos</strong>. Se quiser, informe a Data de Início. Clique em <strong>Buscar Processos</strong>. O parceiro precisa ter CNPJ e cidade.</p></div></li>
+                        <li><div><strong>A busca entra na fila</strong><p>Uma rotina roda a cada 5 minutos e processa até 5 buscas por vez. Cada busca leva de alguns segundos a alguns minutos.</p></div></li>
+                        <li><div><strong>O Finder consulta a CETESB</strong><p>Pesquisa o CNPJ, aproveita só as unidades da cidade do parceiro e confere o CNPJ de cada uma. Não precisa de login na CETESB.</p></div></li>
+                        <li><div><strong>Cada solicitação vira um processo</strong><p>Lê o histórico de solicitações de cada unidade. Para as novas, baixa o PDF do documento, extrai o texto e cria o processo. As que já existem só têm a situação atualizada.</p></div></li>
+                        <li><div><strong>As regras rodam</strong><p>Cada processo novo é comparado com as regras. Quando uma casa, a requisição é aberta no departamento certo.</p></div></li>
+                        <li><div><strong>O parceiro ganha uma etiqueta</strong><p>CETESB, se algum processo foi criado ou atualizado, ou SEM CETESB. O histórico do parceiro registra o resultado: quantos processos foram criados, atualizados ou deram erro.</p></div></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que você vê no Odoo</h2>
+                    <p>Menus, colunas e abas do Finder.</p>
+                </div>
+                <div>
+                    <div class="stack">
+                    <div>
+                        <p class="facts-label">Menus</p>
+                        <dl class="facts">
+                            <div><dt>Finder › Processos</dt><dd>Todas as solicitações importadas, de todos os parceiros.</dd></div>
+                            <div><dt>Finder › Jobs de Busca</dt><dd>Fila e histórico das buscas, com o resultado ou o erro de cada uma.</dd></div>
+                            <div><dt>Finder › Configuração › Buscador</dt><dd>Agenda a busca de um parceiro sem abrir o cadastro dele.</dd></div>
+                            <div><dt>Finder › Configuração › Regras</dt><dd>Regras que abrem requisição automaticamente.</dd></div>
+                        </dl>
+                    </div>
+                    <div>
+                        <p class="facts-label">Colunas da lista de processos</p>
+                        <dl class="facts">
+                            <div><dt>SD Nº</dt><dd>Número da solicitação na CETESB</dd></div>
+                            <div><dt>Nº Processo</dt><dd>Por exemplo, CETESB.063501/2026-34</dd></div>
+                            <div><dt>Objeto da Solicitação</dt><dd>O que foi pedido: Parecer Técnico, Certificado de Movimentação de Resíduos, e assim por diante</dd></div>
+                            <div><dt>Nº Documento</dt><dd>Link para a página de autenticidade na CETESB</dd></div>
+                            <div><dt>Desde</dt><dd>Data da situação atual, em geral a de emissão do documento</dd></div>
+                            <div><dt>Situação</dt><dd>Veja a legenda abaixo</dd></div>
+                        </dl>
+                    </div>
+                    <div class="prose">
+                        <p>Ao abrir uma solicitação, duas abas mostram o <strong>Documento PDF</strong> emitido pela CETESB, para ler direto no Odoo, e o <strong>Conteúdo Extraído</strong>, o texto do PDF. É nesse texto que as regras procuram palavras.</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Situação de cada solicitação</h2>
+                    <p>A cor da situação na lista de processos.</p>
+                </div>
+                <div>
+                    <ul class="legend">
+                        <li><span class="sw sw--green"></span><strong>Verde</strong><span>Emitida, Deferido, LO Parcial Emitida</span></li>
+                        <li><span class="sw sw--yellow"></span><strong>Amarelo</strong><span>Em Análise</span></li>
+                        <li><span class="sw sw--red"></span><strong>Vermelho</strong><span>Negada, Indeferido</span></li>
+                        <li><span class="sw sw--blue"></span><strong>Azul</strong><span>Atendida</span></li>
+                        <li><span class="sw sw--gray"></span><strong>Cinza</strong><span>Arquivada</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Acompanhando as buscas</h2>
+                    <p>Cada busca pedida vira um job, do mais recente para o mais antigo.</p>
+                </div>
+                <div>
+                    <table class="rules">
+                        <caption class="sr-only">Situações de uma busca</caption>
+                        <tbody>
+                            <tr><th scope="row">Pendente</th><td>Na fila, aguardando a próxima execução da rotina.</td></tr>
+                            <tr><th scope="row">Executando</th><td>Consultando a CETESB neste momento. Enquanto isso, não dá para pedir outra busca para o mesmo parceiro.</td></tr>
+                            <tr><th scope="row">Concluído</th><td>Terminou. A coluna Resultado mostra quantos processos foram criados, atualizados ou deram erro.</td></tr>
+                            <tr><th scope="row">Erro</th><td>Não foi possível concluir. O motivo aparece nos detalhes e o botão <strong>Reprocessar</strong> devolve o job para a fila.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="regras">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Uma regra abre a requisição sozinha</h2>
+                    <p>A regra casa quando todos os filtros preenchidos são atendidos. Filtro em branco vale para qualquer valor.</p>
+                </div>
+                <div>
+                    <div class="stack">
+                    <div>
+                        <p class="facts-label">Exemplo de regra</p>
+                        <dl class="facts">
+                            <div><dt>Tipo</dt><dd>Parecer Técnico</dd></div>
+                            <div><dt>Situação</dt><dd>Deferido</dd></div>
+                            <div><dt>Palavra no PDF</dt><dd>perigoso, perigosa</dd></div>
+                            <div><dt>Resultado</dt><dd>Requisição aberta no departamento Técnico, com trecho do documento na descrição</dd></div>
+                        </dl>
+                    </div>
+                    <table class="rules">
+                        <caption class="sr-only">Filtros e resultado de uma regra</caption>
+                        <tbody>
+                            <tr><th scope="row">Tipo de documento</th><td>Licença de Operação, CADRI, Parecer Técnico, Auto de Infração e os demais tipos da CETESB.</td></tr>
+                            <tr><th scope="row">Situação do processo</th><td>Deferido, Indeferido, Emitida, Em Análise e as outras situações do portal.</td></tr>
+                            <tr><th scope="row">Palavras no PDF</th><td>A regra só dispara se o texto do documento contiver uma das palavras, separadas por vírgula.</td></tr>
+                            <tr><th scope="row">Requisição criada</th><td>Departamento, categoria e prazo definidos na regra, com a descrição montada a partir do processo.</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Atualização diária</h2>
+                </div>
+                <div>
+                    <div class="prose">
+                        <p>Todo dia, o Finder consulta de novo cada processo <em>Em Análise</em>. Quando a CETESB decide, a situação muda sozinha, os campos que estavam vazios são preenchidos, o PDF é baixado e as regras rodam.</p>
+                        <p>Documentos que ainda não tinham PDF são tentados de novo nessa mesma rodada. O Finder entende os dois sistemas de documento da CETESB, o antigo e o e-CETESB.</p>
+                        <p>Buscar de novo é seguro: as solicitações são identificadas pelo número, então uma nova busca não duplica nada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta" id="contato">
+            <div class="wrap">
+                <div>
+                    <h2>Mostramos o Finder com CNPJs da sua carteira</h2>
+                    <p>A demonstração inclui uma regra montada para o seu processo.</p>
+                </div>
+                <div>
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Finder" class="btn-primary">Pedir demonstração por e-mail</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>Dúvidas ou suporte: <a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></span>
+            <span>&copy; 2026 COGNIVM</span>
+        </div>
+    </footer>
+</body>
+</html>

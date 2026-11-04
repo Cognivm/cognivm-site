@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner API: cadastro de empresas pela Receita no Odoo | COGNIVM</title>
+    <meta name="description" content="Busque empresas por CNAE, região, porte e capital social e cadastre no Odoo com os dados da Receita Federal.">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header class="site-nav">
+        <div class="wrap">
+            <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+            <ul>
+                <li class="hide-md"><a href="documentos.html">Documentos</a></li>
+                <li class="hide-md"><a href="plataformas.html">Plataformas</a></li>
+                <li class="hide-md"><a href="finder.html">Finder</a></li>
+                <li class="hide-md"><a href="partner-api.html" aria-current="page">Partner API</a></li>
+                <li class="hide-md"><a href="controle-de-queima.html">Controle de Queima</a></li>
+                <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="#contato" class="nav-contact">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <h1>Partner API: cadastre empresas <mark>sem digitar</mark>, direto da Receita</h1>
+                <p class="lead">Busque por CNPJ, por nome ou por filtros de atividade e região. A empresa entra no Odoo com endereço, CNAEs e sócios, sem duplicar.</p>
+                <div class="actions">
+                    <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
+                    <a href="#como-funciona" class="link-ink">Ver como funciona</a>
+                </div>
+                <dl class="ficha">
+                    <div><dt>O que é</dt><dd>Conexão do Odoo com a base de CNPJ da Receita Federal. Busca empresas e cria o parceiro com identificação, endereço, atividade, porte e sócios.</dd></div>
+                    <div><dt>Para quem</dt><dd>Comercial, cadastro e fiscal, e quem alimenta a Gestão de Resíduos e o Finder, que partem do CNPJ.</dd></div>
+                    <div><dt>O que muda</dt><dd>O cadastro deixa de ser digitado. Cada empresa entra uma vez, atualizada, com os sócios como contatos.</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que muda no cadastro</h2>
+                    <p>Do formulário digitado ao CNPJ que preenche tudo.</p>
+                </div>
+                <div>
+                    <table class="ledger">
+                        <thead>
+                            <tr><th scope="col">Sem o sistema</th><th scope="col">Com o sistema</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="Sem o sistema">Digitar razão social, endereço e CNAE de cada parceiro.</td>
+                            <td data-label="Com o sistema">O CNPJ preenche identificação, endereço, atividade, porte e capital social.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Endereço e CNAE com erro de digitação.</td>
+                            <td data-label="Com o sistema">Os dados vêm da base da Receita, e o município é ligado ao cadastro de cidades do Odoo.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">O mesmo parceiro cadastrado duas vezes.</td>
+                            <td data-label="Com o sistema">Antes de criar, o sistema procura o CNPJ. Se a empresa existe, ela é atualizada.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Sócios anotados num campo de texto.</td>
+                            <td data-label="Com o sistema">Cada sócio vira um contato ligado à empresa, com CPF quando disponível.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Prospecção feita com lista comprada ou planilha.</td>
+                            <td data-label="Com o sistema">Você filtra por atividade, região, porte e capital social, e importa tudo de uma vez.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="como-funciona">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Como funciona</h2>
+                    <p>Do primeiro acesso à lista de empresas no Odoo.</p>
+                </div>
+                <div>
+                    <ol class="vsteps">
+                        <li><div><strong>Configure a conexão</strong><p>Em Partner API, crie a configuração com nome, endereço da API, usuário e senha. Clique em <strong>Test Connection</strong> e em <strong>Authenticate</strong>.</p></div></li>
+                        <li><div><strong>Sincronize os municípios</strong><p><strong>Sincronizar Municípios</strong> liga a cidade da Receita à cidade do Odoo, para o endereço chegar certo.</p></div></li>
+                        <li><div><strong>Escolha como buscar</strong><p>Por filtros, por nome ou pelo próprio cadastro do parceiro. Veja as três formas abaixo.</p></div></li>
+                        <li><div><strong>Traga as empresas</strong><p><strong>Sync Partners</strong> importa o resultado dos filtros. <strong>Buscar por Nome</strong> importa o que a busca encontrou.</p></div></li>
+                        <li><div><strong>Acompanhe o consumo</strong><p>A configuração mostra os créditos que restam, quantas consultas já foram feitas e a data da última sincronização.</p></div></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Três formas de buscar</h2>
+                </div>
+                <div>
+                    <table class="rules">
+                        <caption class="sr-only">Formas de buscar</caption>
+                        <tbody>
+                            <tr><th scope="row">Por filtros</th><td>Para prospectar um setor ou uma região. Todas as empresas encontradas entram como parceiros. Os filtros estão na lista abaixo.</td></tr>
+                            <tr><th scope="row">Por nome</th><td>Quando só se sabe parte da razão social. Aceita filtro opcional de estado, e cada resultado entra com os dados completos do CNPJ.</td></tr>
+                            <tr><th scope="row">Pelo cadastro do parceiro</th><td>Para quem já é cliente. Um botão atualiza os dados a partir do CNPJ, e outro faz a sincronização completa, com os sócios como contatos.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Os filtros</h2>
+                    <p>Cada grupo é uma aba da configuração.</p>
+                </div>
+                <div>
+                    <table class="rules">
+                        <caption class="sr-only">Filtros de busca</caption>
+                        <tbody>
+                            <tr><th scope="row">Localização</th><td>Estado e município.</td></tr>
+                            <tr><th scope="row">Dados da Empresa</th><td>Capital social mínimo e máximo, situação cadastral, porte da empresa e período de início da atividade.</td></tr>
+                            <tr><th scope="row">CNAE</th><td>Atividade principal e atividades secundárias.</td></tr>
+                            <tr><th scope="row">Simples/Nacional</th><td>Optante pelo Simples e optante pelo MEI.</td></tr>
+                            <tr><th scope="row">Limite de resultados</th><td>Quantas empresas trazer por busca. O padrão é 100.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que entra em cada parceiro</h2>
+                    <p>Os campos vêm direto da base pública de CNPJ.</p>
+                </div>
+                <div>
+                    <div>
+                        <p class="facts-label">O que entra em cada parceiro</p>
+                        <dl class="facts">
+                            <div><dt>Identificação</dt><dd>Razão social, nome fantasia, CNPJ</dd></div>
+                            <div><dt>Endereço</dt><dd>Rua, número, complemento, bairro, CEP, município</dd></div>
+                            <div><dt>Atividade</dt><dd>CNAE principal e secundários</dd></div>
+                            <div><dt>Situação</dt><dd>Cadastral, início de atividade, porte, capital social</dd></div>
+                            <div><dt>Contato</dt><dd>Telefones e e-mail da Receita</dd></div>
+                            <div><dt>Sócios</dt><dd>Um contato por sócio, com CPF quando disponível</dd></div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta" id="contato">
+            <div class="wrap">
+                <div>
+                    <h2>Mostramos uma busca com os filtros do seu setor e da sua região</h2>
+                    <p>A demonstração termina com as empresas já cadastradas no Odoo.</p>
+                </div>
+                <div>
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Partner%20API" class="btn-primary">Pedir demonstração por e-mail</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>Dúvidas ou suporte: <a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></span>
+            <span>&copy; 2026 COGNIVM</span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos de resíduos (MTR, CDF e DMR) no Odoo | COGNIVM</title>
+    <meta name="description" content="Emita, receba e declare MTR, CDF e DMR dentro do Odoo, com envio ao órgão ambiental e baixa automática no estoque.">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header class="site-nav">
+        <div class="wrap">
+            <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+            <ul>
+                <li class="hide-md"><a href="documentos.html" aria-current="page">Documentos</a></li>
+                <li class="hide-md"><a href="plataformas.html">Plataformas</a></li>
+                <li class="hide-md"><a href="finder.html">Finder</a></li>
+                <li class="hide-md"><a href="partner-api.html">Partner API</a></li>
+                <li class="hide-md"><a href="controle-de-queima.html">Controle de Queima</a></li>
+                <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="#contato" class="nav-contact">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <h1>MTR, CDF e DMR dentro do Odoo, <mark>sem abrir portal nenhum</mark></h1>
+                <p class="lead">Os três documentos que o órgão ambiental exige para movimentar resíduo, emitidos e controlados no mesmo lugar em que você já controla estoque e cadastro.</p>
+                <div class="actions">
+                    <a href="#contato" class="btn-primary">Falar com a Cognivm</a>
+                    <a href="#tarefas" class="link-ink">Ver como fica no Odoo</a>
+                </div>
+                <dl class="ficha">
+                    <div><dt>O que é</dt><dd>Emissão, recebimento e declaração dos documentos de resíduos direto do Odoo, enviados ao órgão ambiental e ligados ao estoque.</dd></div>
+                    <div><dt>Para quem</dt><dd>Indústrias que mandam resíduo embora, transportadores, destinadores e armazenadores temporários.</dd></div>
+                    <div><dt>O que muda</dt><dd>O dado entra uma vez. O órgão recebe no formato dele, e o resíduo recebido já entra no estoque.</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Os três documentos</h2>
+                    <p>Três siglas que todo sistema de resíduos do país usa.</p>
+                </div>
+                <div>
+                    <div class="docrow">
+                        <div><div class="acronym">MTR</div><p class="full">Manifesto de Transporte de Resíduos</p></div>
+                        <div>
+                            <p class="def">É a guia que acompanha o resíduo do gerador, passando pelo transportador, até o destinador, que confirma o recebimento.</p>
+                            <p class="label">Onde fica no Odoo</p>
+                            <div class="path"><span>MTR</span><i>›</i><span>Manifesto</span><i>›</i><span>Gerador</span><b>/</b><span>Transportador</span><b>/</b><span>Destinador</span><b>/</b><span>Armazenador Temporário</span></div>
+                        </div>
+                    </div>
+                    <div class="docrow">
+                        <div><div class="acronym">CDF</div><p class="full">Certificado de Destinação Final</p></div>
+                        <div>
+                            <p class="def">É o comprovante que o destinador entrega ao gerador de que o resíduo recebido teve a destinação final.</p>
+                            <p class="label">Onde fica no Odoo</p>
+                            <div class="path"><span>CDF</span><i>›</i><span>Certificado</span><i>›</i><span>Destinador</span><b>/</b><span>Gerador</span></div>
+                        </div>
+                    </div>
+                    <div class="docrow">
+                        <div><div class="acronym">DMR</div><p class="full">Declaração de Movimentação de Resíduos</p></div>
+                        <div>
+                            <p class="def">É a declaração periódica ao órgão ambiental do que a unidade gerou, transportou ou destinou no período.</p>
+                            <p class="label">Onde fica no Odoo</p>
+                            <div class="path"><span>DMR</span><i>›</i><span>Declaração</span><i>›</i><span>Gerador</span><b>/</b><span>Transportador</span><b>/</b><span>Destinador</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="tarefas">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Cinco tarefas, poucos passos cada</h2>
+                    <p>O caminho de menu está ao lado de cada tarefa.</p>
+                </div>
+                <div>
+                    <div class="task">
+                        <div>
+                            <h3>Emitir um MTR</h3>
+                            <div class="path"><span>MTR</span><i>›</i><span>Manifesto</span><i>›</i><span>Gerador</span></div>
+                        </div>
+                        <ol>
+                                <li>Clique em <strong>Criar</strong>.</li>
+                                <li>Informe transportador, destinador e os resíduos, cada um com quantidade e tratamento.</li>
+                                <li>Salve. O manifesto é emitido no órgão.</li>
+                        </ol>
+                    </div>
+                    <div class="task">
+                        <div>
+                            <h3>Trazer os manifestos que já estão no portal</h3>
+                            <div class="path"><span>MTR</span><i>›</i><span>Importar Documentos</span></div>
+                        </div>
+                        <ol>
+                                <li>Escolha a unidade e a operação.</li>
+                                <li>Confirme a importação.</li>
+                                <li>Os manifestos entram com resíduos, gerador, transportador e destinador.</li>
+                        </ol>
+                    </div>
+                    <div class="task">
+                        <div>
+                            <h3>Receber um MTR</h3>
+                            <div class="path"><span>MTR</span><i>›</i><span>Manifesto</span><i>›</i><span>Destinador</span></div>
+                        </div>
+                        <ol>
+                                <li>Abra o manifesto e vá na aba <strong>Recebimento</strong>.</li>
+                                <li>Informe motorista, veículo e a quantidade recebida de cada resíduo.</li>
+                                <li>Clique em <strong>Confirmar</strong>. O recebimento vai ao órgão e o resíduo entra no estoque.</li>
+                        </ol>
+                    </div>
+                    <div class="task">
+                        <div>
+                            <h3>Emitir um CDF</h3>
+                            <div class="path"><span>CDF</span><i>›</i><span>Certificado</span><i>›</i><span>Destinador</span></div>
+                        </div>
+                        <ol>
+                                <li>Clique em <strong>Criar</strong> e escolha o gerador e o período.</li>
+                                <li>Os MTRs recebidos nesse período entram sozinhos.</li>
+                                <li>Salve. O certificado é emitido no órgão e o estoque dos resíduos certificados baixa.</li>
+                        </ol>
+                    </div>
+                    <div class="task">
+                        <div>
+                            <h3>Declarar a DMR</h3>
+                            <div class="path"><span>DMR</span><i>›</i><span>Declaração</span><i>›</i><span>Gerador</span><b>/</b><span>Transportador</span><b>/</b><span>Destinador</span></div>
+                        </div>
+                        <ol>
+                                <li>Clique em <strong>Criar</strong> e escolha a unidade e o período.</li>
+                                <li>Salve. A declaração fica criada no órgão como <em>Salvo</em>.</li>
+                                <li>Clique em <strong>Enviar</strong>. Depois, baixe o PDF e a planilha XLS.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que muda no dia a dia</h2>
+                </div>
+                <div>
+                    <table class="ledger">
+                        <thead>
+                            <tr><th scope="col">Sem o sistema</th><th scope="col">Com o sistema</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="Sem o sistema">O resíduo é digitado no manifesto e de novo no estoque.</td>
+                            <td data-label="Com o sistema">O recebimento já dá entrada no estoque, identificado pelo MTR de origem.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Para emitir o CDF, alguém junta à mão os manifestos recebidos no período.</td>
+                            <td data-label="Com o sistema">Você escolhe o gerador e o período, e os MTRs recebidos entram sozinhos.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">A DMR é remontada no fim do período, a partir de planilhas.</td>
+                            <td data-label="Com o sistema">A DMR sai da movimentação registrada e vai ao órgão com um clique.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">A correção de uma quantidade recebida depende de combinar com o gerador fora do sistema.</td>
+                            <td data-label="Com o sistema">O destinador propõe a correção no sistema e o gerador aceita ou recusa.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Manifesto parado passa do prazo sem ninguém ver.</td>
+                            <td data-label="Com o sistema">Aviso diário aos gestores a partir de 60 dias da expedição, com os dias que faltam.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">O portal trava no envio, o reenvio cria o registro duas vezes.</td>
+                            <td data-label="Com o sistema">O sistema não repete a emissão. Se o portal estiver fora do ar, o usuário recebe um aviso claro.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Todo usuário enxerga todos os menus, de todas as operações.</td>
+                            <td data-label="Com o sistema">Cada usuário vê só os menus das operações das suas unidades.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="cta" id="contato">
+            <div class="wrap">
+                <div>
+                    <h2>Mostramos MTR, CDF e DMR com os seus dados</h2>
+                    <p>A demonstração usa as suas unidades e o seu órgão ambiental.</p>
+                </div>
+                <div>
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Documentos%20de%20res%C3%ADduos" class="btn-primary">Pedir demonstração por e-mail</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>Dúvidas ou suporte: <a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></span>
+            <span>&copy; 2026 COGNIVM</span>
+        </div>
+    </footer>
+</body>
+</html>

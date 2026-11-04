@@ -13,6 +13,11 @@
     --lime: #BEE36E;
     --lime-hover: #CDEB8A;
     --green: #3F6F1A;
+    --green-tint: #E4EFD3;
+    --st-yellow: #D9A21B;
+    --st-red: #B3261E;
+    --st-blue: #1F5FA8;
+    --st-gray: #8A919E;
 
     --font-display: 'Archivo', 'IBM Plex Sans', sans-serif;
     --font-text: 'IBM Plex Sans', -apple-system, sans-serif;
@@ -299,4 +304,58 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
     .facts div, .product dl > div { grid-template-columns: 1fr; gap: 2px; }
     .vsteps li { grid-template-columns: 48px 1fr; }
     .cta { padding: 64px 0; }
+}
+
+/* ── Caminho de menu no Odoo ── */
+.path { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; font-family: var(--font-mono); font-size: 0.82rem; }
+.path span { border: 1px solid var(--rule); background: var(--white); padding: 3px 10px; border-radius: var(--radius); }
+.path i { font-style: normal; color: var(--muted); }
+.path b { font-weight: 500; color: var(--muted); }
+
+/* ── Tarefas em poucos passos ── */
+.task { padding: 28px 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 4fr 8fr; gap: 32px; }
+.task:last-child { border-bottom: 1px solid var(--rule); }
+.task h3 { margin-bottom: 12px; }
+.task ol { padding-left: 22px; }
+.task li { margin-bottom: 6px; max-width: 58ch; }
+.task li::marker { color: var(--green); font-weight: 600; }
+
+/* ── Cobertura por plataforma: tudo preenchido ── */
+.cover { width: 100%; min-width: 640px; border-collapse: separate; border-spacing: 6px; margin: -6px; }
+.cover thead th {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 12px 6px;
+}
+.cover tbody th { text-align: left; font-weight: 600; padding: 12px 12px 12px 0; white-space: nowrap; vertical-align: middle; }
+.cover tbody th small { display: block; font-weight: 400; color: var(--muted); font-size: 0.82rem; }
+.cover td { background: var(--green-tint); padding: 12px 14px; border-radius: var(--radius); vertical-align: top; font-size: 0.92rem; }
+.cover td strong { display: block; font-size: 0.95rem; }
+.cover td span { color: var(--muted); font-size: 0.85rem; }
+.cover td.strong { background: var(--green); color: var(--white); }
+.cover td.strong span { color: #E4EFD3; }
+
+/* ── Legenda de situações ── */
+.legend { list-style: none; border-top: 1px solid var(--ink); }
+.legend li { display: grid; grid-template-columns: 24px 140px 1fr; gap: 12px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.legend .sw { width: 12px; height: 12px; display: inline-block; }
+.legend .sw--green { background: var(--green); }
+.legend .sw--yellow { background: var(--st-yellow); }
+.legend .sw--red { background: var(--st-red); }
+.legend .sw--blue { background: var(--st-blue); }
+.legend .sw--gray { background: var(--st-gray); }
+.legend strong { font-weight: 600; }
+.legend span:last-child { color: var(--muted); }
+
+@media (max-width: 960px) {
+    .task { grid-template-columns: 1fr; gap: 12px; }
+}
+@media (max-width: 600px) {
+    .legend li { grid-template-columns: 24px 1fr; }
+    .legend span:last-child { grid-column: 2; }
 }
