@@ -359,3 +359,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
     .legend li { grid-template-columns: 24px 1fr; }
     .legend span:last-child { grid-column: 2; }
 }
+
+/* Vídeos incorporados */
+.videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px 24px; }
+.video { margin: 0; }
+.video-frame { position: relative; aspect-ratio: 16 / 9; background: var(--ink); border-radius: var(--radius); overflow: hidden; }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video figcaption { margin-top: 12px; font-size: 15px; line-height: 1.5; color: var(--muted, #4B5563); }
+.video figcaption strong { color: var(--ink); display: block; }
