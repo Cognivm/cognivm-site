@@ -53,8 +53,7 @@ p { text-wrap: pretty; }
 a { color: var(--green); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
 .site-nav a:focus-visible, .site-nav button:focus-visible,
-.hero a:focus-visible, .cta a:focus-visible, .site-footer a:focus-visible,
-.modal button:focus-visible { outline-color: var(--lime); }
+.hero a:focus-visible, .cta a:focus-visible, .site-footer a:focus-visible { outline-color: var(--lime); }
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -269,12 +268,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
 .site-footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .site-footer a { color: var(--white); }
 
-/* Modal do vídeo institucional */
-.modal { display: none; position: fixed; inset: 0; z-index: 10; background: rgba(14, 24, 48, 0.94); }
-.modal.open { display: grid; place-items: center; }
-.modal-inner { width: min(900px, 90vw); }
-.modal video { width: 100%; display: block; border-radius: var(--radius); }
-.modal-close { display: block; margin: 0 0 12px auto; background: none; border: 0; color: var(--white); font: inherit; font-weight: 600; cursor: pointer; }
 
 /* ── Responsivo ── */
 @media (max-width: 960px) {

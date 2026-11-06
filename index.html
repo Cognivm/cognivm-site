@@ -12,7 +12,6 @@
         <div class="wrap">
             <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
             <ul>
-                <li class="hide-sm"><button type="button" class="link" id="openVideo">Vídeo institucional</button></li>
                 <li class="hide-md"><a href="documentos.html">Documentos</a></li>
                 <li class="hide-md"><a href="plataformas.html">Plataformas</a></li>
                 <li class="hide-md"><a href="finder.html">Finder</a></li>
@@ -124,40 +123,5 @@
             <span>&copy; 2026 COGNIVM</span>
         </div>
     </footer>
-
-    <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-label="Vídeo institucional">
-        <div class="modal-inner">
-            <button type="button" class="modal-close" id="closeVideo">Fechar</button>
-            <video id="aboutVideo" muted loop playsinline preload="none">
-                <source src="logo.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-
-    <script>
-        const modal = document.getElementById('videoModal');
-        const video = document.getElementById('aboutVideo');
-        const opener = document.getElementById('openVideo');
-        const closer = document.getElementById('closeVideo');
-        function openModal() {
-            modal.classList.add('open');
-            video.currentTime = 0;
-            video.play();
-            closer.focus();
-        }
-        function closeModal() {
-            modal.classList.remove('open');
-            video.pause();
-            opener.focus();
-        }
-        opener.addEventListener('click', openModal);
-        closer.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', (e) => {
-            if (!modal.classList.contains('open')) return;
-            if (e.key === 'Escape') closeModal();
-            if (e.key === 'Tab') { e.preventDefault(); closer.focus(); }
-        });
-    </script>
 </body>
 </html>
