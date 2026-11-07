@@ -11,26 +11,49 @@
     <header class="site-nav">
         <div class="wrap">
             <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
-            <ul>
-                <li class="hide-md"><a href="documentos.html">Documentos</a></li>
-                <li class="hide-md"><a href="plataformas.html">Plataformas</a></li>
-                <li class="hide-md"><a href="finder.html">Finder</a></li>
-                <li class="hide-md"><a href="partner-api.html">Partner API</a></li>
-                <li class="hide-md"><a href="controle-de-queima.html" aria-current="page">Controle de Queima</a></li>
-                <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
-                <li><a href="#contato" class="nav-contact">Pedir demonstração</a></li>
-            </ul>
+            <nav class="menu" aria-label="Principal">
+                <ul>
+                    <li class="has-mega">
+                        <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mega">Produtos <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="mega" id="mega">
+                            <ul>
+                            <li><a href="documentos.html"><strong>Documentos</strong><span>MTR, CDF e DMR emitidos e controlados num só lugar</span></a></li>
+                            <li><a href="plataformas.html"><strong>Plataformas</strong><span>O SINIR e seis estados numa tela só</span></a></li>
+                            <li><a href="finder.html"><strong>Finder</strong><span>Licenças da CETESB acompanhadas sozinhas</span></a></li>
+                            <li><a href="partner-api.html"><strong>Partner API</strong><span>Cadastro de empresas direto da Receita</span></a></li>
+                            <li><a href="controle-de-queima.html" aria-current="page"><strong>Controle de Queima</strong><span>O incinerador dentro dos limites da Licença de Operação</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="plataformas.html">Órgãos atendidos</a></li>
+                    <li class="menu-cta"><a href="#contato" class="btn-primary btn-sm">Pedir demonstração</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </header>
 
     <main>
         <section class="hero">
             <div class="wrap">
-                <h1>Opere o incinerador <mark>dentro dos limites</mark> da Licença de Operação</h1>
-                <p class="lead">Cada queima controlada contra a LO e o CADRI, com leitura do CLP em tempo real. Passou do limite, o sistema pausa e registra.</p>
-                <div class="actions">
-                    <a href="#contato" class="btn-primary">Pedir demonstração</a>
-                    <a href="#turno" class="link-ink">Ver um turno de operação</a>
+                <div class="hero-grid hero-grid--media">
+                    <div class="hero-copy">
+                        <h1>Opere o incinerador <mark>dentro dos limites</mark> da Licença de Operação</h1>
+                        <p class="lead">Cada queima controlada contra a LO e o CADRI, com leitura do CLP em tempo real. Passou do limite, o sistema pausa e registra.</p>
+                        <div class="actions">
+                            <a href="#contato" class="btn-primary">Pedir demonstração</a>
+                            <a href="#turno" class="btn-outline">Ver um turno de operação</a>
+                        </div>
+                    </div>
+                    <div class="hero-card">
+                    <h2>Conferido a cada leitura do CLP</h2>
+                    <ul>
+                        <li>A capacidade de queima da Licença de Operação</li>
+                        <li>A taxa máxima do CADRI de cada resíduo</li>
+                        <li>As emissões de cada componente</li>
+                        <li>O intertravamento do CLP</li>
+                    </ul>
+                </div>
                 </div>
                 <dl class="ficha">
                     <div><dt>O que é</dt><dd>Sistema que controla a operação do incinerador de resíduos industriais: libera o resíduo, monta o plano do turno, lê o CLP e fecha o relatório do dia.</dd></div>
@@ -173,9 +196,51 @@
 
     <footer class="site-footer">
         <div class="wrap">
-            <span>Dúvidas ou suporte: <a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></span>
-            <span>&copy; 2026 COGNIVM</span>
+            <div class="foot-brand">
+                <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+                <p>Sistemas ligados aos portais dos órgãos ambientais, para a papelada ambiental da indústria.</p>
+            </div>
+            <div>
+                <h3>Produtos</h3>
+                <ul>
+                        <li><a href="documentos.html">Documentos</a></li>
+                        <li><a href="plataformas.html">Plataformas</a></li>
+                        <li><a href="finder.html">Finder</a></li>
+                        <li><a href="partner-api.html">Partner API</a></li>
+                        <li><a href="controle-de-queima.html">Controle de Queima</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></li>
+                    <li><a href="#contato">Pedir demonstração</a></li>
+                </ul>
+            </div>
         </div>
+        <div class="wrap foot-base"><span>&copy; 2026 COGNIVM</span></div>
     </footer>
+
+    <script>
+        (function () {
+            var h = document.querySelector('.site-nav');
+            var mega = h.querySelector('.menu-btn');
+            var burger = h.querySelector('.burger');
+            mega.addEventListener('click', function () {
+                var open = h.classList.toggle('mega-open');
+                mega.setAttribute('aria-expanded', open);
+            });
+            burger.addEventListener('click', function () {
+                var open = h.classList.toggle('menu-open');
+                burger.setAttribute('aria-expanded', open);
+            });
+            document.addEventListener('click', function (e) {
+                if (!h.contains(e.target)) { h.classList.remove('mega-open'); mega.setAttribute('aria-expanded', false); }
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { h.classList.remove('mega-open', 'menu-open'); mega.setAttribute('aria-expanded', false); mega.focus(); }
+            });
+        })();
+    </script>
 </body>
 </html>

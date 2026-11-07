@@ -11,26 +11,44 @@
     <header class="site-nav">
         <div class="wrap">
             <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
-            <ul>
-                <li class="hide-md"><a href="documentos.html">Documentos</a></li>
-                <li class="hide-md"><a href="plataformas.html">Plataformas</a></li>
-                <li class="hide-md"><a href="finder.html">Finder</a></li>
-                <li class="hide-md"><a href="partner-api.html">Partner API</a></li>
-                <li class="hide-md"><a href="controle-de-queima.html">Controle de Queima</a></li>
-                <li class="show-md"><a href="index.html#produtos">Produtos</a></li>
-                <li><a href="#contato" class="nav-contact">Pedir demonstração</a></li>
-            </ul>
+            <nav class="menu" aria-label="Principal">
+                <ul>
+                    <li class="has-mega">
+                        <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mega">Produtos <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="mega" id="mega">
+                            <ul>
+                            <li><a href="documentos.html"><strong>Documentos</strong><span>MTR, CDF e DMR emitidos e controlados num só lugar</span></a></li>
+                            <li><a href="plataformas.html"><strong>Plataformas</strong><span>O SINIR e seis estados numa tela só</span></a></li>
+                            <li><a href="finder.html"><strong>Finder</strong><span>Licenças da CETESB acompanhadas sozinhas</span></a></li>
+                            <li><a href="partner-api.html"><strong>Partner API</strong><span>Cadastro de empresas direto da Receita</span></a></li>
+                            <li><a href="controle-de-queima.html"><strong>Controle de Queima</strong><span>O incinerador dentro dos limites da Licença de Operação</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="plataformas.html">Órgãos atendidos</a></li>
+                    <li class="menu-cta"><a href="#contato" class="btn-primary btn-sm">Pedir demonstração</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </header>
 
     <main>
         <section class="hero">
             <div class="wrap">
-                <h1>Sua papelada ambiental, <mark>sem digitar duas vezes</mark></h1>
-                <p class="lead">Fazemos módulos que conversam com o IBAMA, a CETESB e os órgãos estaduais, para você emitir, receber e declarar sem digitar duas vezes.</p>
-                <div class="actions">
-                    <a href="#contato" class="btn-primary">Pedir demonstração</a>
-                    <a href="#produtos" class="link-ink">Ver os produtos</a>
+                <div class="hero-grid hero-grid--media">
+                    <div class="hero-copy">
+                        <h1>Sua papelada ambiental, <mark>sem digitar duas vezes</mark></h1>
+                        <p class="lead">Fazemos módulos que conversam com o IBAMA, a CETESB e os órgãos estaduais, para você emitir, receber e declarar sem digitar duas vezes.</p>
+                        <div class="actions">
+                            <a href="#contato" class="btn-primary">Pedir demonstração</a>
+                            <a href="#produtos" class="btn-outline">Ver os produtos</a>
+                        </div>
+                    </div>
+                    <figure class="hero-media">
+                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/g-8uJWSZTiw" title="Veja como a integração com os órgãos funciona" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                    <figcaption>Veja como a integração com os órgãos funciona. <a href="https://www.youtube.com/watch?v=g-8uJWSZTiw" target="_blank" rel="noopener" class="text-link">Abrir no YouTube<span class="sr-only"> (abre em nova aba)</span></a></figcaption>
+                </figure>
                 </div>
                 <dl class="ficha">
                     <div><dt>O que é</dt><dd>Sistemas ligados aos portais dos órgãos ambientais: manifestos de resíduos, licenças, cadastro de empresas e incineração.</dd></div>
@@ -56,65 +74,56 @@
         </section>
         <section class="row row--flat" id="produtos">
             <div class="wrap">
-
+<div class="cards">
                 <article class="product">
-                    <div>
-                        <h2>Documentos: MTR, CDF e DMR</h2>
-                        <a href="documentos.html" class="text-link more">Ver como funciona</a>
-                    </div>
+                    <h3>Documentos: MTR, CDF e DMR</h3>
+                    <p class="what">Emite, recebe e declara os manifestos (MTR), certificados (CDF) e declarações (DMR) que o órgão ambiental exige, direto do sistema.</p>
                     <dl>
-                        <div><dt>O que é</dt><dd>Emite, recebe e declara os manifestos (MTR), certificados (CDF) e declarações (DMR) que o órgão ambiental exige, direto do sistema.</dd></div>
                         <div><dt>O que resolve</dt><dd>O mesmo resíduo costuma ser digitado no portal e de novo no estoque. Aqui o dado entra uma vez, o CDF sai dos manifestos recebidos e a DMR sai da movimentação.</dd></div>
                         <div><dt>Para quem</dt><dd>Geradores, transportadores, destinadores e armazenadores temporários.</dd></div>
                     </dl>
+                    <a href="documentos.html" class="text-link more">Ver como funciona <span aria-hidden="true">&rarr;</span></a>
                 </article>
                 <article class="product">
-                    <div>
-                        <h2>Plataformas</h2>
-                        <a href="plataformas.html" class="text-link more">Ver como funciona</a>
-                    </div>
+                    <h3>Plataformas</h3>
+                    <p class="what">Integração com o SINIR e com os sistemas de SP, SC, RJ, MG, ES e RS. Todos executam MTR, CDF e DMR.</p>
                     <dl>
-                        <div><dt>O que é</dt><dd>Integração com o SINIR e com os sistemas de SP, SC, RJ, MG, ES e RS. Todos executam MTR, CDF e DMR.</dd></div>
                         <div><dt>O que resolve</dt><dd>Cada órgão é um portal diferente, com login, tela e regra próprios. Aqui é uma tela só, com troca de plataforma no topo.</dd></div>
                         <div><dt>Para quem</dt><dd>Quem opera em mais de um estado, ou em um só e quer sair do portal.</dd></div>
                     </dl>
+                    <a href="plataformas.html" class="text-link more">Ver como funciona <span aria-hidden="true">&rarr;</span></a>
                 </article>
                 <article class="product">
-                    <div>
-                        <h2>Finder</h2>
-                        <a href="finder.html" class="text-link more">Ver como funciona</a>
-                    </div>
+                    <h3>Finder</h3>
+                    <p class="what">Acompanha no portal da CETESB os processos de licenciamento de uma empresa, baixa o PDF do documento emitido e abre requisição interna por regras.</p>
                     <dl>
-                        <div><dt>O que é</dt><dd>Acompanha no portal da CETESB os processos de licenciamento de uma empresa, baixa o PDF do documento emitido e abre requisição interna por regras.</dd></div>
                         <div><dt>O que resolve</dt><dd>Ninguém precisa lembrar de consultar o portal. Quando a decisão sai, o documento já está com você e a requisição já está aberta.</dd></div>
                         <div><dt>Para quem</dt><dd>Consultorias ambientais e empresas que acompanham licenças de clientes ou fornecedores.</dd></div>
                     </dl>
+                    <a href="finder.html" class="text-link more">Ver como funciona <span aria-hidden="true">&rarr;</span></a>
                 </article>
                 <article class="product">
-                    <div>
-                        <h2>Partner API</h2>
-                        <a href="partner-api.html" class="text-link more">Ver como funciona</a>
-                    </div>
+                    <h3>Partner API</h3>
+                    <p class="what">Busca empresas na base de CNPJ da Receita Federal e cadastra com endereço, atividade e sócios.</p>
                     <dl>
-                        <div><dt>O que é</dt><dd>Busca empresas na base de CNPJ da Receita Federal e cadastra com endereço, atividade e sócios.</dd></div>
                         <div><dt>O que resolve</dt><dd>Acaba a digitação de cadastro, o parceiro duplicado e o endereço errado. Também monta listas de prospecção por setor e região.</dd></div>
                         <div><dt>Para quem</dt><dd>Comercial, cadastro e quem alimenta os outros módulos.</dd></div>
                     </dl>
+                    <a href="partner-api.html" class="text-link more">Ver como funciona <span aria-hidden="true">&rarr;</span></a>
                 </article>
                 <article class="product">
-                    <div>
-                        <h2>Controle de Queima</h2>
-                        <a href="controle-de-queima.html" class="text-link more">Ver como funciona</a>
-                    </div>
+                    <h3>Controle de Queima</h3>
+                    <p class="what">Controla a operação de um incinerador de resíduos industriais contra os limites da Licença de Operação, com leitura do CLP em tempo real.</p>
                     <dl>
-                        <div><dt>O que é</dt><dd>Controla a operação de um incinerador de resíduos industriais contra os limites da Licença de Operação, com leitura do CLP em tempo real.</dd></div>
                         <div><dt>O que resolve</dt><dd>O limite estourado costuma aparecer depois, no papel. Aqui o sistema pausa a queima na hora, registra o alerta e só a gerência autoriza a retomada.</dd></div>
                         <div><dt>Para quem</dt><dd>Centrais de incineração e indústrias com incinerador próprio.</dd></div>
                     </dl>
+                    <a href="controle-de-queima.html" class="text-link more">Ver como funciona <span aria-hidden="true">&rarr;</span></a>
                 </article>
-                <div class="product product--minor">
-                    <div><h2>Gestão Química</h2></div>
-                    <dl><div><dt>O que é</dt><dd>Cadastro de produtos químicos com elaboração de FISPQ e controle de inventário.</dd></div></dl>
+                <article class="product product--minor">
+                    <h3>Gestão Química</h3>
+                    <p class="what">Cadastro de produtos químicos com elaboração de FISPQ e controle de inventário.</p>
+                </article>
                 </div>
             </div>
         </section>
@@ -153,9 +162,51 @@
 
     <footer class="site-footer">
         <div class="wrap">
-            <span>Dúvidas ou suporte: <a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></span>
-            <span>&copy; 2026 COGNIVM</span>
+            <div class="foot-brand">
+                <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+                <p>Sistemas ligados aos portais dos órgãos ambientais, para a papelada ambiental da indústria.</p>
+            </div>
+            <div>
+                <h3>Produtos</h3>
+                <ul>
+                        <li><a href="documentos.html">Documentos</a></li>
+                        <li><a href="plataformas.html">Plataformas</a></li>
+                        <li><a href="finder.html">Finder</a></li>
+                        <li><a href="partner-api.html">Partner API</a></li>
+                        <li><a href="controle-de-queima.html">Controle de Queima</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></li>
+                    <li><a href="#contato">Pedir demonstração</a></li>
+                </ul>
+            </div>
         </div>
+        <div class="wrap foot-base"><span>&copy; 2026 COGNIVM</span></div>
     </footer>
+
+    <script>
+        (function () {
+            var h = document.querySelector('.site-nav');
+            var mega = h.querySelector('.menu-btn');
+            var burger = h.querySelector('.burger');
+            mega.addEventListener('click', function () {
+                var open = h.classList.toggle('mega-open');
+                mega.setAttribute('aria-expanded', open);
+            });
+            burger.addEventListener('click', function () {
+                var open = h.classList.toggle('menu-open');
+                burger.setAttribute('aria-expanded', open);
+            });
+            document.addEventListener('click', function (e) {
+                if (!h.contains(e.target)) { h.classList.remove('mega-open'); mega.setAttribute('aria-expanded', false); }
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { h.classList.remove('mega-open', 'menu-open'); mega.setAttribute('aria-expanded', false); mega.focus(); }
+            });
+        })();
+    </script>
 </body>
 </html>
