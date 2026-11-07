@@ -365,3 +365,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline
 .row[id="video"] .rail p { max-width: 28ch; }
 
 h1, h2 { text-wrap: balance; }
+
+/* Botão de ação no menu */
+.site-nav ul a.nav-contact { background: var(--lime); color: var(--ink); padding: 8px 16px; border-radius: var(--radius); }
+.site-nav ul a.nav-contact:hover { background: #CDEB8A; }
+
+/* Faixa de órgãos atendidos */
+.strip { border-bottom: 1px solid var(--rule); background: var(--white); }
+.strip .wrap { display: flex; align-items: baseline; gap: 16px 32px; flex-wrap: wrap; padding-top: 20px; padding-bottom: 20px; }
+.strip p { margin: 0; font-size: 14px; font-weight: 600; color: var(--muted); }
+.strip ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.strip li { display: flex; flex-direction: column; font-size: 13px; color: var(--muted); }
+.strip li strong { font-family: "IBM Plex Mono", monospace; font-size: 15px; color: var(--ink); }
+
+/* Perguntas frequentes */
+.faq { border-top: 1px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary { cursor: pointer; list-style: none; padding: 18px 32px 18px 0; font-weight: 600; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 22px; font-weight: 400; color: var(--green); }
+.faq details[open] summary::after { content: "\2212"; }
+.faq details p { margin: 0 0 20px; max-width: 62ch; color: var(--muted); }
