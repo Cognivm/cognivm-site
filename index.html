@@ -207,5 +207,16 @@
             });
         })();
     </script>
+
+    <script>
+        (function () {
+            if (new URLSearchParams(location.search).get('debug') !== '1') return;
+            var fig = document.querySelector('.hero-media');
+            if (!fig) return;
+            var vid = 'iL4FJ39bWBc';
+            fig.innerHTML = '<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/' + vid + '" title="Veja como a Cognivm funciona" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>'
+                + '<figcaption>Veja em pouco mais de 1 minuto como a Cognivm funciona. <a href="https://www.youtube.com/watch?v=' + vid + '" target="_blank" rel="noopener" class="text-link">Abrir no YouTube<span class="sr-only"> (abre em nova aba)</span></a></figcaption>';
+        })();
+    </script>
 </body>
 </html>
