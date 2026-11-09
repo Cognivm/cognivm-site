@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário de resíduos: do MTR recebido ao estoque | COGNIVM</title>
+    <meta name="description" content="O resíduo recebido no MTR entra no estoque com a quantidade e a classificação do manifesto, separado por origem.">
+    <link rel="stylesheet" href="site.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+    <header class="site-nav">
+        <div class="wrap">
+            <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+            <nav class="menu" aria-label="Principal">
+                <ul>
+                    <li class="has-mega">
+                        <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mega">Produtos <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="mega" id="mega">
+                            <ul>
+                            <li><a href="documentos.html"><strong>Documentos</strong><span>MTR, CDF e DMR emitidos e controlados num só lugar</span></a></li>
+                            <li><a href="inventario.html" aria-current="page"><strong>Inventário</strong><span>O resíduo recebido no MTR já entra no estoque</span></a></li>
+                            <li><a href="plataformas.html"><strong>Plataformas</strong><span>O SINIR e seis estados numa tela só</span></a></li>
+                            <li><a href="finder.html"><strong>Finder</strong><span>Licenças da CETESB acompanhadas sozinhas</span></a></li>
+                            <li><a href="partner-api.html"><strong>Partner API</strong><span>Cadastro de empresas direto da Receita</span></a></li>
+                            <li><a href="controle-de-queima.html"><strong>Controle de Queima</strong><span>O incinerador dentro dos limites da Licença de Operação</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="plataformas.html">Órgãos atendidos</a></li>
+                    <li class="menu-cta"><a href="#contato" class="btn-primary btn-sm">Pedir demonstração</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div class="hero-grid hero-grid--media">
+                    <div class="hero-copy">
+                        <h1>Inventário de resíduos: o MTR recebido <mark>já entra no estoque</mark></h1>
+                        <p class="lead">Quando você confirma o recebimento do MTR, cada resíduo entra no estoque com a quantidade que chegou e a classificação do manifesto. Você sabe o que tem guardado e de qual MTR veio.</p>
+                        <div class="actions">
+                            <a href="#contato" class="btn-primary">Pedir demonstração</a>
+                            <a href="#como-funciona" class="btn-outline">Ver como funciona</a>
+                        </div>
+                    </div>
+                    <figure class="hero-media">
+                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/9qCKFd2qbxg" title="Inventário: do MTR recebido ao estoque" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                    <figcaption>Inventário: do MTR recebido ao estoque. <a href="https://www.youtube.com/watch?v=9qCKFd2qbxg" target="_blank" rel="noopener" class="text-link">Abrir no YouTube<span class="sr-only"> (abre em nova aba)</span></a></figcaption>
+                </figure>
+                </div>
+                <dl class="ficha">
+                    <div><dt>O que é</dt><dd>Estoque de resíduos alimentado pelo recebimento do MTR, com a classificação do manifesto e o vínculo com a origem.</dd></div>
+                    <div><dt>Para quem</dt><dd>Destinadores, armazenadores temporários, centrais de tratamento e incineradores que recebem resíduo de terceiros.</dd></div>
+                    <div><dt>O que muda</dt><dd>O resíduo recebido não é lançado à mão. A entrada no estoque sai do próprio manifesto.</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que muda no estoque</h2>
+                    <p>Do lançamento manual ao manifesto que alimenta o estoque.</p>
+                </div>
+                <div>
+                    <table class="ledger">
+                        <thead>
+                            <tr><th scope="col">Sem o sistema</th><th scope="col">Com o sistema</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="Sem o sistema">Lançar no estoque, à mão, cada resíduo que chegou.</td>
+                            <td data-label="Com o sistema">Ao confirmar o recebimento do MTR, a entrada no estoque é feita sozinha, com a quantidade recebida.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Saldo do estoque que não bate com os manifestos.</td>
+                            <td data-label="Com o sistema">Cada entrada nasce de um MTR recebido, então estoque e manifestos dizem a mesma coisa.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Procurar em pastas de qual manifesto veio cada lote.</td>
+                            <td data-label="Com o sistema">O estoque é separado por MTR, e cada item abre o manifesto de origem.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Classificação do resíduo redigitada no cadastro.</td>
+                            <td data-label="Com o sistema">Código IBAMA, classe, estado físico, acondicionamento e tratamento vêm do manifesto.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Baixa do que foi tratado feita depois, em planilha.</td>
+                            <td data-label="Com o sistema">Com o <a href="controle-de-queima.html">Controle de Queima</a>, o que foi queimado sai do estoque quando o plano é concluído.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="como-funciona">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Como funciona</h2>
+                    <p>Do manifesto recebido ao saldo em estoque.</p>
+                </div>
+                <div>
+                    <ol class="vsteps">
+                        <li><div><strong>O MTR chega</strong><p>O manifesto emitido pelo gerador aparece no sistema, vindo da plataforma do órgão. Veja <a href="documentos.html">Documentos</a>.</p></div></li>
+                        <li><div><strong>Você confirma o recebimento</strong><p>Informa quanto de cada resíduo de fato chegou. A confirmação vai para a plataforma do órgão.</p></div></li>
+                        <li><div><strong>O resíduo entra no estoque</strong><p>Já classificado e separado por manifesto, pronto para tratamento ou destinação.</p></div></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que fica registrado</h2>
+                    <p>Tudo vem do MTR, sem redigitar.</p>
+                </div>
+                <div>
+                    <div>
+                        <p class="facts-label">Cada item do estoque guarda</p>
+                        <dl class="facts">
+                            <div><dt>Origem</dt><dd>O número do MTR, com acesso ao manifesto</dd></div>
+                            <div><dt>Identificação</dt><dd>Descrição do resíduo e código IBAMA</dd></div>
+                            <div><dt>Classificação</dt><dd>Classe, estado físico, acondicionamento e tratamento</dd></div>
+                            <div><dt>Quantidade</dt><dd>O que foi recebido, na unidade do manifesto</dd></div>
+                            <div><dt>Transporte</dt><dd>Número ONU e classe de risco, quando houver</dd></div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Perguntas frequentes</h2>
+                </div>
+                <div>
+                    <div class="faq">
+                        <details>
+                            <summary>Preciso cadastrar o resíduo antes de recebê-lo?</summary>
+                            <p>Não. Na primeira vez que um resíduo chega, ele é criado a partir do MTR. Nas próximas, o mesmo resíduo ganha uma nova entrada, separada por manifesto.</p>
+                        </details>
+                        <details>
+                            <summary>E se a quantidade recebida for diferente da do manifesto?</summary>
+                            <p>Você informa a quantidade que de fato chegou, e é ela que entra no estoque.</p>
+                        </details>
+                        <details>
+                            <summary>Funciona junto com o Controle de Queima?</summary>
+                            <p>Sim. O resíduo liberado para queima sai do estoque quando o plano de queima é concluído. Veja <a href="controle-de-queima.html">Controle de Queima</a>.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta" id="contato">
+            <div class="wrap">
+                <div>
+                    <h2>Mostramos um MTR sendo recebido e o resíduo entrando no estoque</h2>
+                    <p>Com os resíduos que a sua unidade recebe.</p>
+                </div>
+                <div>
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Invent%C3%A1rio" class="btn-primary">Pedir demonstração</a>
+                    <p class="micro">Abre o seu e-mail com a mensagem pronta. É só enviar.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="foot-brand">
+                <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+                <p>Sistemas ligados aos portais dos órgãos ambientais, para a papelada ambiental da indústria.</p>
+            </div>
+            <div>
+                <h3>Produtos</h3>
+                <ul>
+                        <li><a href="documentos.html">Documentos</a></li>
+                        <li><a href="inventario.html">Inventário</a></li>
+                        <li><a href="plataformas.html">Plataformas</a></li>
+                        <li><a href="finder.html">Finder</a></li>
+                        <li><a href="partner-api.html">Partner API</a></li>
+                        <li><a href="controle-de-queima.html">Controle de Queima</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></li>
+                    <li><a href="#contato">Pedir demonstração</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap foot-base"><span>&copy; 2026 COGNIVM</span></div>
+    </footer>
+
+    <script>
+        (function () {
+            var h = document.querySelector('.site-nav');
+            var mega = h.querySelector('.menu-btn');
+            var burger = h.querySelector('.burger');
+            mega.addEventListener('click', function () {
+                var open = h.classList.toggle('mega-open');
+                mega.setAttribute('aria-expanded', open);
+            });
+            burger.addEventListener('click', function () {
+                var open = h.classList.toggle('menu-open');
+                burger.setAttribute('aria-expanded', open);
+            });
+            document.addEventListener('click', function (e) {
+                if (!h.contains(e.target)) { h.classList.remove('mega-open'); mega.setAttribute('aria-expanded', false); }
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { h.classList.remove('mega-open', 'menu-open'); mega.setAttribute('aria-expanded', false); mega.focus(); }
+            });
+        })();
+    </script>
+</body>
+</html>
