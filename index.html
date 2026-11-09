@@ -50,8 +50,8 @@
                         </div>
                     </div>
                     <figure class="hero-media">
-                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/g-8uJWSZTiw" title="Veja como a integração com os órgãos funciona" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-                    <figcaption>Veja como a integração com os órgãos funciona. <a href="https://www.youtube.com/watch?v=g-8uJWSZTiw" target="_blank" rel="noopener" class="text-link">Abrir no YouTube<span class="sr-only"> (abre em nova aba)</span></a></figcaption>
+                    <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/ExWiQunJGHQ" title="Veja em menos de 2 minutos como a Cognivm funciona" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                    <figcaption>Veja em menos de 2 minutos como a Cognivm funciona. <a href="https://www.youtube.com/watch?v=ExWiQunJGHQ" target="_blank" rel="noopener" class="text-link">Abrir no YouTube<span class="sr-only"> (abre em nova aba)</span></a></figcaption>
                 </figure>
                 </div>
                 <dl class="ficha">
@@ -216,17 +216,6 @@
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') { h.classList.remove('mega-open', 'menu-open'); mega.setAttribute('aria-expanded', false); mega.focus(); }
             });
-        })();
-    </script>
-
-    <script>
-        (function () {
-            if (new URLSearchParams(location.search).get('debug') !== '1') return;
-            var fig = document.querySelector('.hero-media');
-            if (!fig) return;
-            var vid = 'iL4FJ39bWBc';
-            fig.innerHTML = '<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/' + vid + '" title="Veja como a Cognivm funciona" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>'
-                + '<figcaption>Veja em pouco mais de 1 minuto como a Cognivm funciona. <a href="https://www.youtube.com/watch?v=' + vid + '" target="_blank" rel="noopener" class="text-link">Abrir no YouTube<span class="sr-only"> (abre em nova aba)</span></a></figcaption>';
         })();
     </script>
 </body>
