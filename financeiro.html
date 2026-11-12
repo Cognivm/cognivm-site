@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeiro: nota fiscal, contas a receber e a pagar | COGNIVM</title>
+    <meta name="description" content="Pedido, NF-e, contas a receber, compras e contas a pagar no mesmo sistema dos documentos ambientais.">
+    <link rel="stylesheet" href="site.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+    <header class="site-nav">
+        <div class="wrap">
+            <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+            <nav class="menu" aria-label="Principal">
+                <ul>
+                    <li class="has-mega">
+                        <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mega">Produtos <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="mega" id="mega">
+                            <ul>
+                            <li><a href="documentos.html"><strong>Documentos</strong><span>MTR, CDF e DMR emitidos e controlados num só lugar</span></a></li>
+                            <li><a href="inventario.html"><strong>Inventário</strong><span>O resíduo recebido no MTR já entra no estoque</span></a></li>
+                            <li><a href="plataformas.html"><strong>Plataformas</strong><span>O SINIR e seis estados numa tela só</span></a></li>
+                            <li><a href="finder.html"><strong>Finder</strong><span>Licenças da CETESB acompanhadas sozinhas</span></a></li>
+                            <li><a href="partner-api.html"><strong>Partner API</strong><span>Cadastro de empresas direto da Receita</span></a></li>
+                            <li><a href="controle-de-queima.html"><strong>Controle de Queima</strong><span>O incinerador dentro dos limites da Licença de Operação</span></a></li>
+                            <li><a href="financeiro.html" aria-current="page"><strong>Financeiro</strong><span>Nota fiscal, contas a receber e a pagar</span></a></li>
+                            <li><a href="whatsapp.html"><strong>WhatsApp</strong><span>As conversas da empresa ligadas aos documentos</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="plataformas.html">Órgãos atendidos</a></li>
+                    <li class="menu-cta"><a href="#contato" class="btn-primary btn-sm">Pedir demonstração</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div class="hero-grid hero-grid--media">
+                    <div class="hero-copy">
+                        <h1>Da venda ao caixa, <mark>com a nota fiscal no caminho</mark></h1>
+                        <p class="lead">Pedido, nota fiscal eletrônica, contas a receber, compras e contas a pagar no mesmo sistema dos seus documentos ambientais. A nota sai do pedido, vira cobrança sozinha, e você vê o que entra e o que vence sem montar planilha.</p>
+                        <div class="actions">
+                            <a href="#contato" class="btn-primary">Pedir demonstração</a>
+                            <a href="#como-funciona" class="btn-outline">Ver o caminho do dinheiro</a>
+                        </div>
+                    </div>
+                    <div class="hero-card">
+                    <h2>Num lugar só</h2>
+                    <ul>
+                        <li>A NF-e emitida e autorizada na SEFAZ</li>
+                        <li>Os impostos calculados pela operação e pelo produto</li>
+                        <li>O que cada cliente deve, parcela por parcela</li>
+                        <li>O que você deve a fornecedores, por vencimento</li>
+                    </ul>
+                </div>
+                </div>
+                <dl class="ficha">
+                    <div><dt>O que é</dt><dd>O ciclo financeiro inteiro: venda, emissão da NF-e, contas a receber, compras, contas a pagar e baixa dos pagamentos.</dd></div>
+                    <div><dt>Para quem</dt><dd>Destinadores, transportadores e indústrias que faturam e pagam fornecedores, do faturamento ao financeiro e à contabilidade.</dd></div>
+                    <div><dt>O que muda</dt><dd>Cliente, itens e impostos entram uma vez. A nota, a cobrança e o saldo saem desse mesmo dado.</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que muda no financeiro</h2>
+                    <p>Do emissor separado e da planilha de vencimentos a um fluxo só.</p>
+                </div>
+                <div>
+                    <table class="ledger">
+                        <thead>
+                            <tr><th scope="col">Sem o sistema</th><th scope="col">Com o sistema</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="Sem o sistema">A nota é feita num emissor à parte, com cliente, produto e valor digitados de novo.</td>
+                            <td data-label="Com o sistema">A nota sai do pedido, com o cliente, os itens e os valores que já estão lá.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">ICMS, IPI, PIS e COFINS conferidos à mão, nota por nota.</td>
+                            <td data-label="Com o sistema">Os impostos são calculados pelo tipo de operação e pela classificação fiscal de cada produto.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">A nota com erro fica parada e ninguém percebe.</td>
+                            <td data-label="Com o sistema">Quando a nota tem um erro que impede o envio, o sistema abre uma requisição interna com o motivo, para alguém corrigir.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Contas a receber numa planilha que ninguém atualiza.</td>
+                            <td data-label="Com o sistema">Cada nota emitida já vira cobrança, com as parcelas e os vencimentos da condição de pagamento do cliente.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Conta de fornecedor lembrada no dia seguinte ao vencimento.</td>
+                            <td data-label="Com o sistema">Cada compra vira uma conta a pagar, e a lista mostra o que vence hoje, na semana e o que já venceu.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Sem o sistema">Esperar o fornecedor mandar o XML da nota por e-mail.</td>
+                            <td data-label="Com o sistema">As notas emitidas contra o seu CNPJ chegam ao sistema direto da SEFAZ.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="como-funciona">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O caminho do dinheiro</h2>
+                    <p>Da venda fechada ao pagamento recebido.</p>
+                </div>
+                <div>
+                    <ol class="vsteps">
+                        <li><div><strong>A venda é registrada</strong><p>O pedido guarda o cliente, os itens, o preço e a condição de pagamento combinada.</p></div></li>
+                        <li><div><strong>A nota é emitida</strong><p>A NF-e sai do pedido, é assinada com o certificado digital da empresa e enviada à SEFAZ para autorização.</p></div></li>
+                        <li><div><strong>A cobrança nasce sozinha</strong><p>A nota autorizada vira contas a receber, já dividida nas parcelas e nos vencimentos combinados.</p></div></li>
+                        <li><div><strong>O pagamento dá baixa</strong><p>Quando o cliente paga, você registra o recebimento e o título sai da lista de pendentes. Do lado das compras, o caminho é o mesmo, até a conta paga.</p></div></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>O que cada parte resolve</h2>
+                    <p>Em palavras simples, sem jargão contábil.</p>
+                </div>
+                <div>
+                    <div class="docrow">
+                        <div><div class="acronym">NF-e</div><p class="full">Nota Fiscal Eletrônica</p></div>
+                        <div>
+                            <p class="def">É a nota fiscal de venda de produtos, emitida em formato digital e autorizada pela Secretaria da Fazenda (SEFAZ) do estado.</p>
+                            <p class="label">Com a Cognivm</p>
+                            <p>A nota é montada a partir do pedido, com os impostos calculados, e vai à SEFAZ sem sair do sistema. Ninguém redigita o que já foi vendido.</p>
+                        </div>
+                    </div>
+                    <div class="docrow">
+                        <div><div class="acronym">A receber</div><p class="full">Contas a receber</p></div>
+                        <div>
+                            <p class="def">É o que os seus clientes devem: cada parcela de cada nota, com o vencimento.</p>
+                            <p class="label">Com a Cognivm</p>
+                            <p>A lista se monta com as notas emitidas. Você filtra por cliente, por período ou pelo que já venceu, e sabe a quem cobrar hoje.</p>
+                        </div>
+                    </div>
+                    <div class="docrow">
+                        <div><div class="acronym">A pagar</div><p class="full">Contas a pagar</p></div>
+                        <div>
+                            <p class="def">É o que a sua empresa deve a fornecedores e prestadores, com o vencimento de cada conta.</p>
+                            <p class="label">Com a Cognivm</p>
+                            <p>Cada compra lançada entra na lista com a data de vencimento. O que vence na semana aparece antes de virar multa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="wrap">
+                <div class="rail">
+                    <h2>Perguntas frequentes</h2>
+                </div>
+                <div>
+                    <div class="faq">
+                        <details>
+                            <summary>Preciso de certificado digital?</summary>
+                            <p>Sim. A NF-e é assinada com o certificado digital A1 da empresa, o mesmo usado em qualquer emissor. Ele é cadastrado uma vez no sistema.</p>
+                        </details>
+                        <details>
+                            <summary>Os impostos são calculados sozinhos?</summary>
+                            <p>Sim. O cálculo segue o tipo de operação da nota e a classificação fiscal de cada produto. A sua contabilidade define as regras uma vez, e elas valem para todas as notas.</p>
+                        </details>
+                        <details>
+                            <summary>O financeiro conversa com os documentos ambientais?</summary>
+                            <p>Sim. Clientes e fornecedores são o mesmo cadastro usado nos manifestos. Com o <a href="partner-api.html">Partner API</a>, esse cadastro já entra com os dados da Receita Federal, o que evita nota com endereço ou CNPJ errado.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta" id="contato">
+            <div class="wrap">
+                <div>
+                    <h2>Mostramos uma venda virando nota, cobrança e pagamento recebido</h2>
+                    <p>Com os produtos e as condições de pagamento da sua empresa.</p>
+                </div>
+                <div>
+                    <a href="mailto:sac@cognivm.com.br?subject=Demonstra%C3%A7%C3%A3o%20Financeiro" class="btn-primary">Pedir demonstração</a>
+                    <p class="micro">Abre o seu e-mail com a mensagem pronta. É só enviar.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="foot-brand">
+                <a href="index.html" class="wordmark">COGNI<span>VM</span></a>
+                <p>Sistemas ligados aos portais dos órgãos ambientais, para a papelada ambiental da indústria.</p>
+            </div>
+            <div>
+                <h3>Produtos</h3>
+                <ul>
+                        <li><a href="documentos.html">Documentos</a></li>
+                        <li><a href="inventario.html">Inventário</a></li>
+                        <li><a href="plataformas.html">Plataformas</a></li>
+                        <li><a href="finder.html">Finder</a></li>
+                        <li><a href="partner-api.html">Partner API</a></li>
+                        <li><a href="controle-de-queima.html">Controle de Queima</a></li>
+                        <li><a href="financeiro.html">Financeiro</a></li>
+                        <li><a href="whatsapp.html">WhatsApp</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="mailto:sac@cognivm.com.br">sac@cognivm.com.br</a></li>
+                    <li><a href="#contato">Pedir demonstração</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap foot-base"><span>&copy; 2026 COGNIVM</span></div>
+    </footer>
+
+    <script>
+        (function () {
+            var h = document.querySelector('.site-nav');
+            var mega = h.querySelector('.menu-btn');
+            var burger = h.querySelector('.burger');
+            mega.addEventListener('click', function () {
+                var open = h.classList.toggle('mega-open');
+                mega.setAttribute('aria-expanded', open);
+            });
+            burger.addEventListener('click', function () {
+                var open = h.classList.toggle('menu-open');
+                burger.setAttribute('aria-expanded', open);
+            });
+            document.addEventListener('click', function (e) {
+                if (!h.contains(e.target)) { h.classList.remove('mega-open'); mega.setAttribute('aria-expanded', false); }
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { h.classList.remove('mega-open', 'menu-open'); mega.setAttribute('aria-expanded', false); mega.focus(); }
+            });
+        })();
+    </script>
+</body>
+</html>
